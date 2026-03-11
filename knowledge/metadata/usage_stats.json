@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2025-03-11",
+  "total_usage": 0,
+  "top_used_parts": [],
+  "usage_by_type": {
+    "policies": 0,
+    "templates": 0,
+    "cases": 0,
+    "data": 0,
+    "processes": 0,
+    "scripts": 0,
+    "risks": 0
+  }
+}
