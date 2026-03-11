@@ -1,0 +1,38 @@
+# 系统配置
+
+system:
+  name: 城乡建设政策知识服务系统
+  version: 1.0.0
+  description: 城乡建设咨询领域的政策知识服务系统
+  author: 用户与AI智能体协作
+
+paths:
+  policy_base: "00_政策法规"
+  knowledge_base: "knowledge"
+  output_base: "outputs"
+  logs_base: "logs"
+  config_base: "config"
+
+workflow:
+  auto_execute: true
+  max_parallel_tasks: 5
+  timeout_seconds: 300
+  retry_count: 3
+
+skills:
+  auto_discover: true
+  paths:
+    - "C:/Users/Administrator/.claude/skills"
+    - "C:/Users/Administrator/.agents/skills"
+    - "C:/Users/Administrator/.trae-cn/skills"
+    - "skills"
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/system.log"
+
+git:
+  auto_commit: true
+  commit_message_template: "feat: 完成{scenario}"
+  auto_tag: false
