@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "optimization_rules": [
+    {
+      "name": "low_success_rate",
+      "condition": "success_rate < 0.7",
+      "action": "optimize_workflow",
+      "priority": "high"
+    },
+    {
+      "name": "low_usage_skill",
+      "condition": "skill_usage < 2",
+      "action": "review_skill",
+      "priority": "medium"
+    },
+    {
+      "name": "frequent_errors",
+      "condition": "error_rate > 0.3",
+      "action": "fix_errors",
+      "priority": "high"
+    },
+    {
+      "name": "slow_growth",
+      "condition": "parts_growth < 1",
+      "action": "enhance_collection",
+      "priority": "low"
+    }
+  ],
+  "auto_apply": true,
+  "check_interval_hours": 24,
+  "thresholds": {
+    "success_rate_min": 0.7,
+    "error_rate_max": 0.3,
+    "interaction_count_min": 10,
+    "parts_growth_min": 1
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-03-12T01:02:00",
+  "metrics": {
+    "total_interactions": 1,
+    "successful_outputs": 1,
+    "parts_added": 3,
+    "quality_improvements": 0,
+    "auto_adaptations": 3,
+    "pattern_discoveries": 3
+  },
+  "parts_stats": {
+    "total": 3,
+    "by_type": {
+      "knowledge": 1,
+      "template": 1,
+      "pattern": 1
+    }
+  },
+  "last_interaction": {
+    "scenario": "河东区城建谋划项目精准谋划",
+    "timestamp": "2026-03-12T01:02:00",
+    "success": true
+  },
+  "learned_patterns": [
+    {
+      "type": "workflow",
+      "name": "项目谋划流程",
+      "usage_count": 1
+    },
+    {
+      "type": "mapping",
+      "name": "资金领域与项目类型映射",
+      "usage_count": 1
+    },
+    {
+      "type": "risk_check",
+      "name": "风险识别要点",
+      "usage_count": 1
+    }
+  ],
+  "improvements_applied": [
+    {
+      "type": "intent_enhancement",
+      "description": "添加'精准谋划'关键词到项目谋划意图",
+      "timestamp": "2026-03-12T01:02:00"
+    },
+    {
+      "type": "entity_enhancement",
+      "description": "添加超长期特别国债到资金来源",
+      "timestamp": "2026-03-12T01:02:00"
+    },
+    {
+      "type": "entity_enhancement",
+      "description": "添加地下管网、电梯更新等新项目类型",
+      "timestamp": "2026-03-12T01:02:00"
+    }
+  ]
+}
