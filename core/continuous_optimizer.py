@@ -119,6 +119,12 @@ class ContinuousOptimizer:
         
         improvements = []
         
+        if isinstance(health, str):
+            health = {}
+        
+        if isinstance(patterns, str):
+            patterns = {}
+        
         success_rate = self.evolution_monitor._calculate_success_rate(
             health.get("metrics", {})
         )
