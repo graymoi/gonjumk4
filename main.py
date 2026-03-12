@@ -17,6 +17,9 @@ from core.parts_library import PartsLibrary, auto_collect_parts
 from core.evolution_engine import EvolutionEngine
 from core.evolution_monitor import EvolutionMonitor
 from core.continuous_optimizer import ContinuousOptimizer
+from core.auto_loop_engine import AutoLoopEngine
+from core.workflow_scheduler import WorkflowScheduler, WorkflowOrchestrator
+from core.continuous_learning import ContinuousLearningEngine
 from adapters.policy_adapter import PolicyAdapter
 from hooks.hooks import hook_manager
 
@@ -36,13 +39,19 @@ class PolicyKnowledgeSystem:
         self.continuous_optimizer = ContinuousOptimizer()
         self.policy_adapter = PolicyAdapter()
         
+        self.auto_loop_engine = AutoLoopEngine(self)
+        self.workflow_scheduler = WorkflowScheduler(self.auto_loop_engine)
+        self.workflow_orchestrator = WorkflowOrchestrator(self.auto_loop_engine, self.workflow_scheduler)
+        self.continuous_learning = ContinuousLearningEngine()
+        
         self._print_banner()
     
     def _print_banner(self):
         """打印系统横幅"""
         print("=" * 60)
-        print("城乡建设政策知识服务系统 v2.1.0")
+        print("城乡建设政策知识服务系统 v3.0.0")
         print("可生长、自动进化的AI自动化系统")
+        print("支持自动化循环工作 (Loop功能)")
         print("=" * 60)
         print()
     
@@ -204,6 +213,9 @@ class PolicyKnowledgeSystem:
             "进化": self._cmd_evolution,
             "优化": self._cmd_optimization,
             "健康": self._cmd_health,
+            "loop": self._cmd_loop,
+            "调度": self._cmd_schedule,
+            "学习": self._cmd_learning,
             "帮助": self._cmd_help
         }
         
@@ -335,6 +347,129 @@ class PolicyKnowledgeSystem:
         
         print()
     
+    def _cmd_loop(self, params: str):
+        """自动化循环命令"""
+        
+        if params == "start":
+            print("启动自动化循环引擎...")
+            interval = 60
+            self.auto_loop_engine.start(interval=interval)
+            
+            try:
+                while self.auto_loop_engine.running:
+                    import time
+                    time.sleep(1)
+            except KeyboardInterrupt:
+                print("\n停止自动化循环...")
+                self.auto_loop_engine.stop()
+        
+        elif params == "stop":
+            self.auto_loop_engine.stop()
+        
+        elif params == "once":
+            self.auto_loop_engine.run_once()
+        
+        elif params == "status":
+            status = self.auto_loop_engine.get_status()
+            print("自动化循环状态:")
+            print(f"  运行状态: {'运行中' if status['running'] else '已停止'}")
+            print(f"  当前迭代: #{status['current_iteration']}")
+            print(f"  队列大小: {status['queue_size']}")
+            print(f"  循环间隔: {status['loop_interval']}秒")
+            print(f"\n统计信息:")
+            print(f"  总循环数: {status['stats']['total_loops']}")
+            print(f"  任务完成: {status['stats']['tasks_completed']}")
+            print(f"  任务失败: {status['stats']['tasks_failed']}")
+            print(f"  学习事件: {status['stats']['learning_events']}")
+            print(f"  优化应用: {status['stats']['optimizations_applied']}")
+        
+        else:
+            print("自动化循环引擎命令:")
+            print("  /loop start  - 启动自动循环")
+            print("  /loop stop   - 停止自动循环")
+            print("  /loop once   - 执行一次循环")
+            print("  /loop status - 查看循环状态")
+    
+    def _cmd_schedule(self, params: str):
+        """任务调度命令"""
+        
+        if params.startswith("add "):
+            parts = params[4:].split(" ", 2)
+            if len(parts) >= 2:
+                task_type = parts[0]
+                delay_seconds = int(parts[1])
+                task_data = json.loads(parts[2]) if len(parts) > 2 else {}
+                
+                from datetime import datetime, timedelta
+                schedule_time = datetime.now() + timedelta(seconds=delay_seconds)
+                
+                task_id = f"scheduled_{datetime.now().strftime('%Y%m%d%H%M%S')}"
+                self.workflow_scheduler.schedule_task(
+                    task_id=task_id,
+                    task_type=task_type,
+                    schedule_time=schedule_time,
+                    data=task_data
+                )
+            else:
+                print("用法: /调度 add <任务类型> <延迟秒数> [JSON数据]")
+        
+        elif params == "list":
+            pending = self.workflow_scheduler.get_pending_tasks()
+            print(f"待执行任务: {len(pending)}个")
+            for task in pending[:10]:
+                print(f"  - {task['task_id']} ({task['task_type']})")
+        
+        elif params == "stats":
+            stats = self.workflow_scheduler.get_scheduler_stats()
+            print("调度器统计:")
+            print(f"  总调度: {stats['total_scheduled']}")
+            print(f"  已完成: {stats['completed']}")
+            print(f"  已失败: {stats['failed']}")
+            print(f"  待执行: {stats['pending']}")
+        
+        else:
+            print("任务调度命令:")
+            print("  /调度 add <类型> <延迟> [数据] - 添加调度任务")
+            print("  /调度 list                    - 列出待执行任务")
+            print("  /调度 stats                   - 查看调度统计")
+    
+    def _cmd_learning(self, params: str):
+        """持续学习命令"""
+        
+        if params == "report":
+            report = self.continuous_learning.get_learning_report()
+            print("学习报告:")
+            print(f"  总模式数: {report['stats']['total_patterns']}")
+            print(f"  模式应用: {report['stats']['patterns_applied']}")
+            print(f"  学习事件: {report['stats']['learning_events']}")
+            print(f"  改进次数: {report['stats']['improvements']}")
+            
+            print(f"\n模式类型分布:")
+            for ptype, count in report['pattern_types'].items():
+                print(f"  {ptype}: {count}个")
+            
+            print(f"\nTop 10 模式:")
+            for i, pattern in enumerate(report['top_patterns'], 1):
+                print(f"  {i}. {pattern['pattern_id']} (置信度: {pattern['confidence']:.2%}, 使用: {pattern['usage']})")
+        
+        elif params == "evolve":
+            self.continuous_learning.evolve_patterns()
+        
+        elif params == "skills":
+            skills = self.continuous_learning.generate_skill_from_patterns()
+            if skills:
+                print(f"可生成技能: {len(skills)}个")
+                for skill in skills:
+                    print(f"  - {skill['skill_name']} (置信度: {skill['confidence']:.2%})")
+            else:
+                print("暂无可生成技能")
+        
+        else:
+            print("持续学习命令:")
+            print("  /学习 report  - 查看学习报告")
+            print("  /学习 evolve  - 进化学习模式")
+            print("  /学习 skills  - 生成新技能")
+    
     def _cmd_help(self, params: str):
         """帮助命令"""
         
@@ -350,6 +485,12 @@ class PolicyKnowledgeSystem:
         print("  /进化 [auto]      - 进化分析/自动进化")
         print("  /优化            - 运行持续优化")
         print("  /健康            - 系统健康检查")
+        print("  /loop start      - 启动自动化循环")
+        print("  /loop stop       - 停止自动化循环")
+        print("  /loop once       - 执行一次循环")
+        print("  /loop status     - 查看循环状态")
+        print("  /调度 add/list/stats - 任务调度")
+        print("  /学习 report/evolve/skills - 持续学习")
         print("  /帮助            - 显示帮助信息")
         print("  /exit            - 退出系统")
         print()
