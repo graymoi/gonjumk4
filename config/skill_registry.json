@@ -3,1278 +3,1278 @@
     "name": "adaptyv",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\adaptyv",
     "description": "Adaptyv",
-    "discovered_at": "2026-03-13T03:01:03.210350"
+    "discovered_at": "2026-03-13T03:01:43.429316"
   },
   "aeon": {
     "name": "aeon",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\aeon",
     "description": "Aeon Time Series Machine Learning",
-    "discovered_at": "2026-03-13T03:01:03.210350"
+    "discovered_at": "2026-03-13T03:01:43.429861"
   },
   "agent-browser": {
     "name": "agent-browser",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\agent-browser",
     "description": "Browser Automation with agent-browser",
-    "discovered_at": "2026-03-13T03:01:03.210350"
+    "discovered_at": "2026-03-13T03:01:43.429861"
   },
   "agent-skill-creator": {
     "name": "agent-skill-creator",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\agent-skill-creator",
     "description": "/agent-skill-creator — Level 5 Skill Dark Factory",
-    "discovered_at": "2026-03-13T03:01:03.211348"
+    "discovered_at": "2026-03-13T03:01:43.430401"
   },
   "algorithmic-art": {
     "name": "algorithmic-art",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\algorithmic-art",
     "description": "ALGORITHMIC PHILOSOPHY CREATION",
-    "discovered_at": "2026-03-13T03:01:03.073894"
+    "discovered_at": "2026-03-13T03:01:43.277264"
   },
   "alphafold-database": {
     "name": "alphafold-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\alphafold-database",
     "description": "AlphaFold Database",
-    "discovered_at": "2026-03-13T03:01:03.211348"
+    "discovered_at": "2026-03-13T03:01:43.430401"
   },
   "anndata": {
     "name": "anndata",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\anndata",
     "description": "AnnData",
-    "discovered_at": "2026-03-13T03:01:03.211348"
+    "discovered_at": "2026-03-13T03:01:43.431397"
   },
   "api-documentation-generator": {
     "name": "api-documentation-generator",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\api-documentation-generator",
     "description": "API Documentation Generator",
-    "discovered_at": "2026-03-13T03:01:03.212345"
+    "discovered_at": "2026-03-13T03:01:43.431397"
   },
   "arboreto": {
     "name": "arboreto",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\arboreto",
     "description": "Arboreto",
-    "discovered_at": "2026-03-13T03:01:03.212912"
+    "discovered_at": "2026-03-13T03:01:43.431397"
   },
   "astropy": {
     "name": "astropy",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\astropy",
     "description": "Astropy",
-    "discovered_at": "2026-03-13T03:01:03.212912"
+    "discovered_at": "2026-03-13T03:01:43.432505"
   },
   "benchling-integration": {
     "name": "benchling-integration",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\benchling-integration",
     "description": "Benchling Integration",
-    "discovered_at": "2026-03-13T03:01:03.212912"
+    "discovered_at": "2026-03-13T03:01:43.432505"
   },
   "biopython": {
     "name": "biopython",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\biopython",
     "description": "Biopython: Computational Molecular Biology in Python",
-    "discovered_at": "2026-03-13T03:01:03.212912"
+    "discovered_at": "2026-03-13T03:01:43.432505"
   },
   "biorxiv-database": {
     "name": "biorxiv-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\biorxiv-database",
     "description": "bioRxiv Database",
-    "discovered_at": "2026-03-13T03:01:03.213913"
+    "discovered_at": "2026-03-13T03:01:43.433444"
   },
   "bioservices": {
     "name": "bioservices",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\bioservices",
     "description": "BioServices",
-    "discovered_at": "2026-03-13T03:01:03.213913"
+    "discovered_at": "2026-03-13T03:01:43.433444"
   },
   "brainstorming": {
     "name": "brainstorming",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\brainstorming",
     "description": "Brainstorming Ideas Into Designs",
-    "discovered_at": "2026-03-13T03:01:03.213913"
+    "discovered_at": "2026-03-13T03:01:43.433444"
   },
   "brand-guidelines": {
     "name": "brand-guidelines",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\brand-guidelines",
     "description": "Anthropic Brand Styling",
-    "discovered_at": "2026-03-13T03:01:03.077567"
+    "discovered_at": "2026-03-13T03:01:43.280748"
   },
   "brenda-database": {
     "name": "brenda-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\brenda-database",
     "description": "BRENDA Database",
-    "discovered_at": "2026-03-13T03:01:03.214939"
+    "discovered_at": "2026-03-13T03:01:43.434440"
   },
   "canvas-design": {
     "name": "canvas-design",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\canvas-design",
     "description": "DESIGN PHILOSOPHY CREATION",
-    "discovered_at": "2026-03-13T03:01:03.078169"
+    "discovered_at": "2026-03-13T03:01:43.281747"
   },
   "capa-officer": {
     "name": "capa-officer",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\capa-officer",
     "description": "CAPA Officer",
-    "discovered_at": "2026-03-13T03:01:03.215477"
+    "discovered_at": "2026-03-13T03:01:43.434440"
   },
   "cellxgene-census": {
     "name": "cellxgene-census",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\cellxgene-census",
     "description": "CZ CELLxGENE Census",
-    "discovered_at": "2026-03-13T03:01:03.215477"
+    "discovered_at": "2026-03-13T03:01:43.434440"
   },
   "chembl-database": {
     "name": "chembl-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\chembl-database",
     "description": "ChEMBL Database",
-    "discovered_at": "2026-03-13T03:01:03.216037"
+    "discovered_at": "2026-03-13T03:01:43.435444"
   },
   "cirq": {
     "name": "cirq",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\cirq",
     "description": "Cirq - Quantum Computing with Python",
-    "discovered_at": "2026-03-13T03:01:03.216578"
+    "discovered_at": "2026-03-13T03:01:43.435444"
   },
   "citation-management": {
     "name": "citation-management",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\citation-management",
     "description": "Citation Management",
-    "discovered_at": "2026-03-13T03:01:03.216578"
+    "discovered_at": "2026-03-13T03:01:43.435991"
   },
   "claudeception": {
     "name": "claudeception",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\claudeception",
     "description": "Claudeception",
-    "discovered_at": "2026-03-13T03:01:03.217140"
+    "discovered_at": "2026-03-13T03:01:43.435991"
   },
   "clinical-decision-support": {
     "name": "clinical-decision-support",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\clinical-decision-support",
     "description": "Clinical Decision Support Documents",
-    "discovered_at": "2026-03-13T03:01:03.217719"
+    "discovered_at": "2026-03-13T03:01:43.437011"
   },
   "clinical-reports": {
     "name": "clinical-reports",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\clinical-reports",
     "description": "Clinical Report Writing",
-    "discovered_at": "2026-03-13T03:01:03.218250"
+    "discovered_at": "2026-03-13T03:01:43.437011"
   },
   "clinicaltrials-database": {
     "name": "clinicaltrials-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\clinicaltrials-database",
     "description": "ClinicalTrials.gov Database",
-    "discovered_at": "2026-03-13T03:01:03.218250"
+    "discovered_at": "2026-03-13T03:01:43.437011"
   },
   "clinpgx-database": {
     "name": "clinpgx-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\clinpgx-database",
     "description": "ClinPGx Database",
-    "discovered_at": "2026-03-13T03:01:03.219233"
+    "discovered_at": "2026-03-13T03:01:43.438016"
   },
   "clinvar-database": {
     "name": "clinvar-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\clinvar-database",
     "description": "ClinVar Database",
-    "discovered_at": "2026-03-13T03:01:03.219979"
+    "discovered_at": "2026-03-13T03:01:43.438016"
   },
   "cobrapy": {
     "name": "cobrapy",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\cobrapy",
     "description": "COBRApy - Constraint-Based Reconstruction and Analysis",
-    "discovered_at": "2026-03-13T03:01:03.221012"
+    "discovered_at": "2026-03-13T03:01:43.438560"
   },
   "code-documenter": {
     "name": "code-documenter",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\code-documenter",
     "description": "Code Documenter",
-    "discovered_at": "2026-03-13T03:01:03.221012"
+    "discovered_at": "2026-03-13T03:01:43.438560"
   },
   "code-refactoring": {
     "name": "code-refactoring",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\code-refactoring",
     "description": "Code Refactoring",
-    "discovered_at": "2026-03-13T03:01:03.221575"
+    "discovered_at": "2026-03-13T03:01:43.439123"
   },
   "codebase-cleanup-deps-audit": {
     "name": "codebase-cleanup-deps-audit",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\codebase-cleanup-deps-audit",
     "description": "Dependency Audit and Security Analysis",
-    "discovered_at": "2026-03-13T03:01:03.222130"
+    "discovered_at": "2026-03-13T03:01:43.439665"
   },
   "codebase-cleanup-refactor-clean": {
     "name": "codebase-cleanup-refactor-clean",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\codebase-cleanup-refactor-clean",
     "description": "Refactor and Clean Code",
-    "discovered_at": "2026-03-13T03:01:03.222701"
+    "discovered_at": "2026-03-13T03:01:43.439665"
   },
   "continuous-learning": {
     "name": "continuous-learning",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\continuous-learning",
     "description": "Continuous Learning Skill",
-    "discovered_at": "2026-03-13T03:01:03.222701"
+    "discovered_at": "2026-03-13T03:01:43.440204"
   },
   "cosmic-database": {
     "name": "cosmic-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\cosmic-database",
     "description": "COSMIC Database",
-    "discovered_at": "2026-03-13T03:01:03.223258"
+    "discovered_at": "2026-03-13T03:01:43.440204"
   },
   "dask": {
     "name": "dask",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\dask",
     "description": "Dask",
-    "discovered_at": "2026-03-13T03:01:03.223768"
+    "discovered_at": "2026-03-13T03:01:43.440744"
   },
   "datacommons-client": {
     "name": "datacommons-client",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\datacommons-client",
     "description": "Data Commons Client",
-    "discovered_at": "2026-03-13T03:01:03.223768"
+    "discovered_at": "2026-03-13T03:01:43.441289"
   },
   "datamol": {
     "name": "datamol",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\datamol",
     "description": "Datamol Cheminformatics Skill",
-    "discovered_at": "2026-03-13T03:01:03.224765"
+    "discovered_at": "2026-03-13T03:01:43.441831"
   },
   "deepchem": {
     "name": "deepchem",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\deepchem",
     "description": "DeepChem",
-    "discovered_at": "2026-03-13T03:01:03.224765"
+    "discovered_at": "2026-03-13T03:01:43.442394"
   },
   "deeptools": {
     "name": "deeptools",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\deeptools",
     "description": "deepTools: NGS Data Analysis Toolkit",
-    "discovered_at": "2026-03-13T03:01:03.225769"
+    "discovered_at": "2026-03-13T03:01:43.442394"
   },
   "denario": {
     "name": "denario",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\denario",
     "description": "Denario",
-    "discovered_at": "2026-03-13T03:01:03.225769"
+    "discovered_at": "2026-03-13T03:01:43.442934"
   },
   "diffdock": {
     "name": "diffdock",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\diffdock",
     "description": "DiffDock: Molecular Docking with Diffusion Models",
-    "discovered_at": "2026-03-13T03:01:03.226283"
+    "discovered_at": "2026-03-13T03:01:43.443501"
   },
   "dispatching-parallel-agents": {
     "name": "dispatching-parallel-agents",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\dispatching-parallel-agents",
     "description": "Dispatching Parallel Agents",
-    "discovered_at": "2026-03-13T03:01:03.226283"
+    "discovered_at": "2026-03-13T03:01:43.443501"
   },
   "dnanexus-integration": {
     "name": "dnanexus-integration",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\dnanexus-integration",
     "description": "DNAnexus Integration",
-    "discovered_at": "2026-03-13T03:01:03.227274"
+    "discovered_at": "2026-03-13T03:01:43.444040"
   },
   "doc-coauthoring": {
     "name": "doc-coauthoring",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\doc-coauthoring",
     "description": "Doc Co-Authoring Workflow",
-    "discovered_at": "2026-03-13T03:01:03.088186"
+    "discovered_at": "2026-03-13T03:01:43.291822"
   },
   "document-illustrator": {
     "name": "document-illustrator",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\document-illustrator",
     "description": "Document Illustrator Skill",
-    "discovered_at": "2026-03-13T03:01:03.227846"
+    "discovered_at": "2026-03-13T03:01:43.444040"
   },
   "document-writer": {
     "name": "document-writer",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\document-writer",
     "description": "Documentation Writer for Nuxt Ecosystem",
-    "discovered_at": "2026-03-13T03:01:03.227846"
+    "discovered_at": "2026-03-13T03:01:43.444600"
   },
   "documentation-lookup": {
     "name": "documentation-lookup",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\documentation-lookup",
     "description": "When to Use This Skill",
-    "discovered_at": "2026-03-13T03:01:03.227846"
+    "discovered_at": "2026-03-13T03:01:43.444600"
   },
   "documentation-templates": {
     "name": "documentation-templates",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\documentation-templates",
     "description": "Documentation Templates",
-    "discovered_at": "2026-03-13T03:01:03.228841"
+    "discovered_at": "2026-03-13T03:01:43.445143"
   },
   "docx": {
     "name": "docx",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\docx",
     "description": "DOCX creation, editing, and analysis",
-    "discovered_at": "2026-03-13T03:01:03.228841"
+    "discovered_at": "2026-03-13T03:01:43.445143"
   },
   "drugbank-database": {
     "name": "drugbank-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\drugbank-database",
     "description": "DrugBank Database",
-    "discovered_at": "2026-03-13T03:01:03.228841"
+    "discovered_at": "2026-03-13T03:01:43.445712"
   },
   "ena-database": {
     "name": "ena-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\ena-database",
     "description": "ENA Database",
-    "discovered_at": "2026-03-13T03:01:03.229851"
+    "discovered_at": "2026-03-13T03:01:43.445712"
   },
   "ensembl-database": {
     "name": "ensembl-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\ensembl-database",
     "description": "Ensembl Database",
-    "discovered_at": "2026-03-13T03:01:03.230361"
+    "discovered_at": "2026-03-13T03:01:43.446252"
   },
   "esm": {
     "name": "esm",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\esm",
     "description": "ESM: Evolutionary Scale Modeling",
-    "discovered_at": "2026-03-13T03:01:03.230361"
+    "discovered_at": "2026-03-13T03:01:43.446816"
   },
   "etetoolkit": {
     "name": "etetoolkit",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\etetoolkit",
     "description": "ETE Toolkit Skill",
-    "discovered_at": "2026-03-13T03:01:03.230361"
+    "discovered_at": "2026-03-13T03:01:43.447325"
   },
   "executing-plans": {
     "name": "executing-plans",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\executing-plans",
     "description": "Executing Plans",
-    "discovered_at": "2026-03-13T03:01:03.231358"
+    "discovered_at": "2026-03-13T03:01:43.447325"
   },
   "exploratory-data-analysis": {
     "name": "exploratory-data-analysis",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\exploratory-data-analysis",
     "description": "Exploratory Data Analysis",
-    "discovered_at": "2026-03-13T03:01:03.231358"
+    "discovered_at": "2026-03-13T03:01:43.447325"
   },
   "fda-database": {
     "name": "fda-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\fda-database",
     "description": "FDA Database Access",
-    "discovered_at": "2026-03-13T03:01:03.231358"
+    "discovered_at": "2026-03-13T03:01:43.448352"
   },
   "find-skills": {
     "name": "find-skills",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\find-skills",
     "description": "Find Skills",
-    "discovered_at": "2026-03-13T03:01:03.232551"
+    "discovered_at": "2026-03-13T03:01:43.448352"
   },
   "finishing-a-development-branch": {
     "name": "finishing-a-development-branch",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\finishing-a-development-branch",
     "description": "Finishing a Development Branch",
-    "discovered_at": "2026-03-13T03:01:03.232551"
+    "discovered_at": "2026-03-13T03:01:43.448352"
   },
   "flowio": {
     "name": "flowio",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\flowio",
     "description": "FlowIO: Flow Cytometry Standard File Handler",
-    "discovered_at": "2026-03-13T03:01:03.232551"
+    "discovered_at": "2026-03-13T03:01:43.449353"
   },
   "fluidsim": {
     "name": "fluidsim",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\fluidsim",
     "description": "FluidSim",
-    "discovered_at": "2026-03-13T03:01:03.233565"
+    "discovered_at": "2026-03-13T03:01:43.449353"
   },
   "fred-economic-data": {
     "name": "fred-economic-data",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\fred-economic-data",
     "description": "FRED Economic Data Access",
-    "discovered_at": "2026-03-13T03:01:03.233565"
+    "discovered_at": "2026-03-13T03:01:43.450073"
   },
   "frontend-design": {
     "name": "frontend-design",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\frontend-design",
     "description": "Design Thinking",
-    "discovered_at": "2026-03-13T03:01:03.095311"
+    "discovered_at": "2026-03-13T03:01:43.298115"
   },
   "gene-database": {
     "name": "gene-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\gene-database",
     "description": "Gene Database",
-    "discovered_at": "2026-03-13T03:01:03.234563"
+    "discovered_at": "2026-03-13T03:01:43.450073"
   },
   "generate-image": {
     "name": "generate-image",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\generate-image",
     "description": "Generate Image",
-    "discovered_at": "2026-03-13T03:01:03.234563"
+    "discovered_at": "2026-03-13T03:01:43.450920"
   },
   "geniml": {
     "name": "geniml",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\geniml",
     "description": "Geniml: Genomic Interval Machine Learning",
-    "discovered_at": "2026-03-13T03:01:03.235096"
+    "discovered_at": "2026-03-13T03:01:43.450920"
   },
   "geo-database": {
     "name": "geo-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\geo-database",
     "description": "GEO Database",
-    "discovered_at": "2026-03-13T03:01:03.235096"
+    "discovered_at": "2026-03-13T03:01:43.450920"
   },
   "geopandas": {
     "name": "geopandas",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\geopandas",
     "description": "GeoPandas",
-    "discovered_at": "2026-03-13T03:01:03.235096"
+    "discovered_at": "2026-03-13T03:01:43.450920"
   },
   "get-available-resources": {
     "name": "get-available-resources",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\get-available-resources",
     "description": "Get Available Resources",
-    "discovered_at": "2026-03-13T03:01:03.236083"
+    "discovered_at": "2026-03-13T03:01:43.451914"
   },
   "gget": {
     "name": "gget",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\gget",
     "description": "gget",
-    "discovered_at": "2026-03-13T03:01:03.237075"
+    "discovered_at": "2026-03-13T03:01:43.451914"
   },
   "gtars": {
     "name": "gtars",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\gtars",
     "description": "Gtars: Genomic Tools and Algorithms in Rust",
-    "discovered_at": "2026-03-13T03:01:03.237075"
+    "discovered_at": "2026-03-13T03:01:43.452915"
   },
   "gwas-database": {
     "name": "gwas-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\gwas-database",
     "description": "GWAS Catalog Database",
-    "discovered_at": "2026-03-13T03:01:03.237075"
+    "discovered_at": "2026-03-13T03:01:43.452915"
   },
   "histolab": {
     "name": "histolab",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\histolab",
     "description": "Histolab",
-    "discovered_at": "2026-03-13T03:01:03.238073"
+    "discovered_at": "2026-03-13T03:01:43.453452"
   },
   "hmdb-database": {
     "name": "hmdb-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\hmdb-database",
     "description": "HMDB Database",
-    "discovered_at": "2026-03-13T03:01:03.238645"
+    "discovered_at": "2026-03-13T03:01:43.453452"
   },
   "hypogenic": {
     "name": "hypogenic",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\hypogenic",
     "description": "Hypogenic",
-    "discovered_at": "2026-03-13T03:01:03.238645"
+    "discovered_at": "2026-03-13T03:01:43.454016"
   },
   "hypothesis-generation": {
     "name": "hypothesis-generation",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\hypothesis-generation",
     "description": "Scientific Hypothesis Generation",
-    "discovered_at": "2026-03-13T03:01:03.239610"
+    "discovered_at": "2026-03-13T03:01:43.454661"
   },
   "imaging-data-commons": {
     "name": "imaging-data-commons",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\imaging-data-commons",
     "description": "Imaging Data Commons",
-    "discovered_at": "2026-03-13T03:01:03.239610"
+    "discovered_at": "2026-03-13T03:01:43.454661"
   },
   "infographics": {
     "name": "infographics",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\infographics",
     "description": "Infographics",
-    "discovered_at": "2026-03-13T03:01:03.239610"
+    "discovered_at": "2026-03-13T03:01:43.455585"
   },
   "internal-comms": {
     "name": "internal-comms",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\internal-comms",
     "description": "When to use this skill",
-    "discovered_at": "2026-03-13T03:01:03.100642"
+    "discovered_at": "2026-03-13T03:01:43.304894"
   },
   "iso-13485-certification": {
     "name": "iso-13485-certification",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\iso-13485-certification",
     "description": "ISO 13485 Certification Documentation Assistant",
-    "discovered_at": "2026-03-13T03:01:03.240607"
+    "discovered_at": "2026-03-13T03:01:43.455585"
   },
   "json-render-core": {
     "name": "json-render-core",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\json-render-core",
     "description": "@json-render/core",
-    "discovered_at": "2026-03-13T03:01:03.240607"
+    "discovered_at": "2026-03-13T03:01:43.455585"
   },
   "json-render-react": {
     "name": "json-render-react",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\json-render-react",
     "description": "@json-render/react",
-    "discovered_at": "2026-03-13T03:01:03.240607"
+    "discovered_at": "2026-03-13T03:01:43.455585"
   },
   "json-render-react-native": {
     "name": "json-render-react-native",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\json-render-react-native",
     "description": "@json-render/react-native",
-    "discovered_at": "2026-03-13T03:01:03.241604"
+    "discovered_at": "2026-03-13T03:01:43.456580"
   },
   "json-render-remotion": {
     "name": "json-render-remotion",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\json-render-remotion",
     "description": "@json-render/remotion",
-    "discovered_at": "2026-03-13T03:01:03.242116"
+    "discovered_at": "2026-03-13T03:01:43.456580"
   },
   "kegg-database": {
     "name": "kegg-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\kegg-database",
     "description": "KEGG Database",
-    "discovered_at": "2026-03-13T03:01:03.242146"
+    "discovered_at": "2026-03-13T03:01:43.456580"
   },
   "knowledge-base": {
     "name": "knowledge-base",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\knowledge-base",
     "description": "Knowledge Base Skill",
-    "discovered_at": "2026-03-13T03:01:03.242146"
+    "discovered_at": "2026-03-13T03:01:43.457578"
   },
   "labarchive-integration": {
     "name": "labarchive-integration",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\labarchive-integration",
     "description": "LabArchives Integration",
-    "discovered_at": "2026-03-13T03:01:03.242146"
+    "discovered_at": "2026-03-13T03:01:43.457578"
   },
   "lamindb": {
     "name": "lamindb",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\lamindb",
     "description": "LaminDB",
-    "discovered_at": "2026-03-13T03:01:03.243109"
+    "discovered_at": "2026-03-13T03:01:43.458145"
   },
   "latchbio-integration": {
     "name": "latchbio-integration",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\latchbio-integration",
     "description": "LatchBio Integration",
-    "discovered_at": "2026-03-13T03:01:03.243109"
+    "discovered_at": "2026-03-13T03:01:43.458145"
   },
   "latex-posters": {
     "name": "latex-posters",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\latex-posters",
     "description": "LaTeX Research Posters",
-    "discovered_at": "2026-03-13T03:01:03.244106"
+    "discovered_at": "2026-03-13T03:01:43.459146"
   },
   "literature-review": {
     "name": "literature-review",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\literature-review",
     "description": "Literature Review",
-    "discovered_at": "2026-03-13T03:01:03.244106"
+    "discovered_at": "2026-03-13T03:01:43.459146"
   },
   "market-research-reports": {
     "name": "market-research-reports",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\market-research-reports",
     "description": "Market Research Reports",
-    "discovered_at": "2026-03-13T03:01:03.245104"
+    "discovered_at": "2026-03-13T03:01:43.459146"
   },
   "markitdown": {
     "name": "markitdown",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\markitdown",
     "description": "MarkItDown - File to Markdown Conversion",
-    "discovered_at": "2026-03-13T03:01:03.245618"
+    "discovered_at": "2026-03-13T03:01:43.460171"
   },
   "matchms": {
     "name": "matchms",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\matchms",
     "description": "Matchms",
-    "discovered_at": "2026-03-13T03:01:03.245618"
+    "discovered_at": "2026-03-13T03:01:43.460171"
   },
   "matlab": {
     "name": "matlab",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\matlab",
     "description": "MATLAB/Octave Scientific Computing",
-    "discovered_at": "2026-03-13T03:01:03.245618"
+    "discovered_at": "2026-03-13T03:01:43.460707"
   },
   "matplotlib": {
     "name": "matplotlib",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\matplotlib",
     "description": "Matplotlib",
-    "discovered_at": "2026-03-13T03:01:03.246605"
+    "discovered_at": "2026-03-13T03:01:43.461271"
   },
   "mcp-builder": {
     "name": "mcp-builder",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\mcp-builder",
     "description": "MCP Server Development Guide",
-    "discovered_at": "2026-03-13T03:01:03.107520"
+    "discovered_at": "2026-03-13T03:01:43.311054"
   },
   "medchem": {
     "name": "medchem",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\medchem",
     "description": "Medchem",
-    "discovered_at": "2026-03-13T03:01:03.246605"
+    "discovered_at": "2026-03-13T03:01:43.461271"
   },
   "mermaid-diagram-specialist": {
     "name": "mermaid-diagram-specialist",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\mermaid-diagram-specialist",
     "description": "Mermaid Diagram Specialist",
-    "discovered_at": "2026-03-13T03:01:03.246605"
+    "discovered_at": "2026-03-13T03:01:43.462304"
   },
   "metabolomics-workbench-database": {
     "name": "metabolomics-workbench-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\metabolomics-workbench-database",
     "description": "Metabolomics Workbench Database",
-    "discovered_at": "2026-03-13T03:01:03.247603"
+    "discovered_at": "2026-03-13T03:01:43.462304"
   },
   "modal": {
     "name": "modal",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\modal",
     "description": "Modal",
-    "discovered_at": "2026-03-13T03:01:03.247603"
+    "discovered_at": "2026-03-13T03:01:43.462304"
   },
   "molfeat": {
     "name": "molfeat",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\molfeat",
     "description": "Molfeat - Molecular Featurization Hub",
-    "discovered_at": "2026-03-13T03:01:03.247603"
+    "discovered_at": "2026-03-13T03:01:43.463330"
   },
   "networkx": {
     "name": "networkx",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\networkx",
     "description": "NetworkX",
-    "discovered_at": "2026-03-13T03:01:03.247603"
+    "discovered_at": "2026-03-13T03:01:43.463330"
   },
   "neurokit2": {
     "name": "neurokit2",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\neurokit2",
     "description": "NeuroKit2",
-    "discovered_at": "2026-03-13T03:01:03.248979"
+    "discovered_at": "2026-03-13T03:01:43.464701"
   },
   "neuropixels-analysis": {
     "name": "neuropixels-analysis",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\neuropixels-analysis",
     "description": "Neuropixels Data Analysis",
-    "discovered_at": "2026-03-13T03:01:03.249890"
+    "discovered_at": "2026-03-13T03:01:43.464701"
   },
   "next-best-practices": {
     "name": "next-best-practices",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\next-best-practices",
     "description": "Next.js Best Practices",
-    "discovered_at": "2026-03-13T03:01:03.249890"
+    "discovered_at": "2026-03-13T03:01:43.465677"
   },
   "next-cache-components": {
     "name": "next-cache-components",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\next-cache-components",
     "description": "Cache Components (Next.js 16+)",
-    "discovered_at": "2026-03-13T03:01:03.249890"
+    "discovered_at": "2026-03-13T03:01:43.465677"
   },
   "next-upgrade": {
     "name": "next-upgrade",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\next-upgrade",
     "description": "Upgrade Next.js",
-    "discovered_at": "2026-03-13T03:01:03.250865"
+    "discovered_at": "2026-03-13T03:01:43.465677"
   },
   "ocr-document-processor": {
     "name": "ocr-document-processor",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\ocr-document-processor",
     "description": "OCR Document Processor",
-    "discovered_at": "2026-03-13T03:01:03.250865"
+    "discovered_at": "2026-03-13T03:01:43.466706"
   },
   "offer-k-dense-web": {
     "name": "offer-k-dense-web",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\offer-k-dense-web",
     "description": "Offer K-Dense Web",
-    "discovered_at": "2026-03-13T03:01:03.251864"
+    "discovered_at": "2026-03-13T03:01:43.466706"
   },
   "office": {
     "name": "office",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\office",
     "description": "Office Document Generation",
-    "discovered_at": "2026-03-13T03:01:03.252542"
+    "discovered_at": "2026-03-13T03:01:43.467266"
   },
   "omero-integration": {
     "name": "omero-integration",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\omero-integration",
     "description": "OMERO Integration",
-    "discovered_at": "2026-03-13T03:01:03.252542"
+    "discovered_at": "2026-03-13T03:01:43.467805"
   },
   "openalex-database": {
     "name": "openalex-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\openalex-database",
     "description": "OpenAlex Database",
-    "discovered_at": "2026-03-13T03:01:03.253586"
+    "discovered_at": "2026-03-13T03:01:43.467805"
   },
   "opentargets-database": {
     "name": "opentargets-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\opentargets-database",
     "description": "Open Targets Database",
-    "discovered_at": "2026-03-13T03:01:03.254152"
+    "discovered_at": "2026-03-13T03:01:43.468366"
   },
   "opentrons-integration": {
     "name": "opentrons-integration",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\opentrons-integration",
     "description": "Opentrons Integration",
-    "discovered_at": "2026-03-13T03:01:03.254152"
+    "discovered_at": "2026-03-13T03:01:43.468366"
   },
   "paper-2-web": {
     "name": "paper-2-web",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\paper-2-web",
     "description": "Paper2All: Academic Paper Transformation Pipeline",
-    "discovered_at": "2026-03-13T03:01:03.254694"
+    "discovered_at": "2026-03-13T03:01:43.468905"
   },
   "pathml": {
     "name": "pathml",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pathml",
     "description": "PathML",
-    "discovered_at": "2026-03-13T03:01:03.255261"
+    "discovered_at": "2026-03-13T03:01:43.469448"
   },
   "pdb-database": {
     "name": "pdb-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pdb-database",
     "description": "PDB Database",
-    "discovered_at": "2026-03-13T03:01:03.255261"
+    "discovered_at": "2026-03-13T03:01:43.469448"
   },
   "pdf": {
     "name": "pdf",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pdf",
     "description": "PDF Processing Guide",
-    "discovered_at": "2026-03-13T03:01:03.255768"
+    "discovered_at": "2026-03-13T03:01:43.469988"
   },
   "peer-review": {
     "name": "peer-review",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\peer-review",
     "description": "Scientific Critical Evaluation and Peer Review",
-    "discovered_at": "2026-03-13T03:01:03.255768"
+    "discovered_at": "2026-03-13T03:01:43.469988"
   },
   "pennylane": {
     "name": "pennylane",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pennylane",
     "description": "PennyLane",
-    "discovered_at": "2026-03-13T03:01:03.255768"
+    "discovered_at": "2026-03-13T03:01:43.470535"
   },
   "performance-optimization": {
     "name": "performance-optimization",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\performance-optimization",
     "description": "Performance Optimization",
-    "discovered_at": "2026-03-13T03:01:03.256766"
+    "discovered_at": "2026-03-13T03:01:43.471077"
   },
   "perplexity-search": {
     "name": "perplexity-search",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\perplexity-search",
     "description": "Perplexity Search",
-    "discovered_at": "2026-03-13T03:01:03.256766"
+    "discovered_at": "2026-03-13T03:01:43.471077"
   },
   "plotly": {
     "name": "plotly",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\plotly",
     "description": "Plotly",
-    "discovered_at": "2026-03-13T03:01:03.257939"
+    "discovered_at": "2026-03-13T03:01:43.471620"
   },
   "polars": {
     "name": "polars",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\polars",
     "description": "Polars",
-    "discovered_at": "2026-03-13T03:01:03.257939"
+    "discovered_at": "2026-03-13T03:01:43.471620"
   },
   "pptx": {
     "name": "pptx",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pptx",
     "description": "PPTX creation, editing, and analysis",
-    "discovered_at": "2026-03-13T03:01:03.258963"
+    "discovered_at": "2026-03-13T03:01:43.472159"
   },
   "pptx-posters": {
     "name": "pptx-posters",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pptx-posters",
     "description": "PPTX Research Posters (HTML-Based)",
-    "discovered_at": "2026-03-13T03:01:03.258963"
+    "discovered_at": "2026-03-13T03:01:43.472701"
   },
   "pretty-mermaid": {
     "name": "pretty-mermaid",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pretty-mermaid",
     "description": "Pretty Mermaid",
-    "discovered_at": "2026-03-13T03:01:03.259928"
+    "discovered_at": "2026-03-13T03:01:43.473240"
   },
   "protocolsio-integration": {
     "name": "protocolsio-integration",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\protocolsio-integration",
     "description": "Protocols.io Integration",
-    "discovered_at": "2026-03-13T03:01:03.259928"
+    "discovered_at": "2026-03-13T03:01:43.473240"
   },
   "pubchem-database": {
     "name": "pubchem-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pubchem-database",
     "description": "PubChem Database",
-    "discovered_at": "2026-03-13T03:01:03.260939"
+    "discovered_at": "2026-03-13T03:01:43.473784"
   },
   "pubmed-database": {
     "name": "pubmed-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pubmed-database",
     "description": "PubMed Database",
-    "discovered_at": "2026-03-13T03:01:03.260939"
+    "discovered_at": "2026-03-13T03:01:43.473784"
   },
   "pufferlib": {
     "name": "pufferlib",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pufferlib",
     "description": "PufferLib - High-Performance Reinforcement Learning",
-    "discovered_at": "2026-03-13T03:01:03.260939"
+    "discovered_at": "2026-03-13T03:01:43.474324"
   },
   "pydeseq2": {
     "name": "pydeseq2",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pydeseq2",
     "description": "PyDESeq2",
-    "discovered_at": "2026-03-13T03:01:03.261930"
+    "discovered_at": "2026-03-13T03:01:43.474324"
   },
   "pydicom": {
     "name": "pydicom",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pydicom",
     "description": "Pydicom",
-    "discovered_at": "2026-03-13T03:01:03.261930"
+    "discovered_at": "2026-03-13T03:01:43.474867"
   },
   "pyhealth": {
     "name": "pyhealth",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pyhealth",
     "description": "PyHealth: Healthcare AI Toolkit",
-    "discovered_at": "2026-03-13T03:01:03.262933"
+    "discovered_at": "2026-03-13T03:01:43.475406"
   },
   "pylabrobot": {
     "name": "pylabrobot",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pylabrobot",
     "description": "PyLabRobot",
-    "discovered_at": "2026-03-13T03:01:03.262933"
+    "discovered_at": "2026-03-13T03:01:43.475406"
   },
   "pymatgen": {
     "name": "pymatgen",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pymatgen",
     "description": "Pymatgen - Python Materials Genomics",
-    "discovered_at": "2026-03-13T03:01:03.263443"
+    "discovered_at": "2026-03-13T03:01:43.475949"
   },
   "pymc-bayesian-modeling": {
     "name": "pymc-bayesian-modeling",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pymc-bayesian-modeling",
     "description": "PyMC Bayesian Modeling",
-    "discovered_at": "2026-03-13T03:01:03.263956"
+    "discovered_at": "2026-03-13T03:01:43.476490"
   },
   "pymoo": {
     "name": "pymoo",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pymoo",
     "description": "Pymoo - Multi-Objective Optimization in Python",
-    "discovered_at": "2026-03-13T03:01:03.264491"
+    "discovered_at": "2026-03-13T03:01:43.476490"
   },
   "pyopenms": {
     "name": "pyopenms",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pyopenms",
     "description": "PyOpenMS",
-    "discovered_at": "2026-03-13T03:01:03.264491"
+    "discovered_at": "2026-03-13T03:01:43.477036"
   },
   "pysam": {
     "name": "pysam",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pysam",
     "description": "Pysam",
-    "discovered_at": "2026-03-13T03:01:03.265005"
+    "discovered_at": "2026-03-13T03:01:43.477036"
   },
   "pytdc": {
     "name": "pytdc",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pytdc",
     "description": "PyTDC (Therapeutics Data Commons)",
-    "discovered_at": "2026-03-13T03:01:03.265005"
+    "discovered_at": "2026-03-13T03:01:43.477575"
   },
   "pytorch-lightning": {
     "name": "pytorch-lightning",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\pytorch-lightning",
     "description": "PyTorch Lightning",
-    "discovered_at": "2026-03-13T03:01:03.265995"
+    "discovered_at": "2026-03-13T03:01:43.477575"
   },
   "qiskit": {
     "name": "qiskit",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\qiskit",
     "description": "Qiskit",
-    "discovered_at": "2026-03-13T03:01:03.265995"
+    "discovered_at": "2026-03-13T03:01:43.477575"
   },
   "qutip": {
     "name": "qutip",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\qutip",
     "description": "QuTiP: Quantum Toolbox in Python",
-    "discovered_at": "2026-03-13T03:01:03.265995"
+    "discovered_at": "2026-03-13T03:01:43.478603"
   },
   "rdkit": {
     "name": "rdkit",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\rdkit",
     "description": "RDKit Cheminformatics Toolkit",
-    "discovered_at": "2026-03-13T03:01:03.267429"
+    "discovered_at": "2026-03-13T03:01:43.479424"
   },
   "reactome-database": {
     "name": "reactome-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\reactome-database",
     "description": "Reactome Database",
-    "discovered_at": "2026-03-13T03:01:03.267429"
+    "discovered_at": "2026-03-13T03:01:43.479424"
   },
   "receiving-code-review": {
     "name": "receiving-code-review",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\receiving-code-review",
     "description": "Code Review Reception",
-    "discovered_at": "2026-03-13T03:01:03.268389"
+    "discovered_at": "2026-03-13T03:01:43.479960"
   },
   "remotion-best-practices": {
     "name": "remotion-best-practices",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\remotion-best-practices",
     "description": "When to use",
-    "discovered_at": "2026-03-13T03:01:03.268389"
+    "discovered_at": "2026-03-13T03:01:43.479964"
   },
   "requesting-code-review": {
     "name": "requesting-code-review",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\requesting-code-review",
     "description": "Requesting Code Review",
-    "discovered_at": "2026-03-13T03:01:03.269383"
+    "discovered_at": "2026-03-13T03:01:43.479964"
   },
   "research-grants": {
     "name": "research-grants",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\research-grants",
     "description": "Research Grant Writing",
-    "discovered_at": "2026-03-13T03:01:03.270381"
+    "discovered_at": "2026-03-13T03:01:43.480506"
   },
   "research-lookup": {
     "name": "research-lookup",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\research-lookup",
     "description": "Research Information Lookup",
-    "discovered_at": "2026-03-13T03:01:03.270937"
+    "discovered_at": "2026-03-13T03:01:43.481103"
   },
   "rowan": {
     "name": "rowan",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\rowan",
     "description": "Rowan: Cloud-Based Quantum Chemistry Platform",
-    "discovered_at": "2026-03-13T03:01:03.270937"
+    "discovered_at": "2026-03-13T03:01:43.481642"
   },
   "scanpy": {
     "name": "scanpy",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scanpy",
     "description": "Scanpy: Single-Cell Analysis",
-    "discovered_at": "2026-03-13T03:01:03.271888"
+    "discovered_at": "2026-03-13T03:01:43.481642"
   },
   "scholar-evaluation": {
     "name": "scholar-evaluation",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scholar-evaluation",
     "description": "Scholar Evaluation",
-    "discovered_at": "2026-03-13T03:01:03.271888"
+    "discovered_at": "2026-03-13T03:01:43.482181"
   },
   "scientific-brainstorming": {
     "name": "scientific-brainstorming",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scientific-brainstorming",
     "description": "Scientific Brainstorming",
-    "discovered_at": "2026-03-13T03:01:03.273886"
+    "discovered_at": "2026-03-13T03:01:43.482691"
   },
   "scientific-critical-thinking": {
     "name": "scientific-critical-thinking",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scientific-critical-thinking",
     "description": "Scientific Critical Thinking",
-    "discovered_at": "2026-03-13T03:01:03.274893"
+    "discovered_at": "2026-03-13T03:01:43.482691"
   },
   "scientific-schematics": {
     "name": "scientific-schematics",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scientific-schematics",
     "description": "Scientific Schematics and Diagrams",
-    "discovered_at": "2026-03-13T03:01:03.275878"
+    "discovered_at": "2026-03-13T03:01:43.483688"
   },
   "scientific-slides": {
     "name": "scientific-slides",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scientific-slides",
     "description": "Scientific Slides",
-    "discovered_at": "2026-03-13T03:01:03.276402"
+    "discovered_at": "2026-03-13T03:01:43.484718"
   },
   "scientific-visualization": {
     "name": "scientific-visualization",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scientific-visualization",
     "description": "Scientific Visualization",
-    "discovered_at": "2026-03-13T03:01:03.276402"
+    "discovered_at": "2026-03-13T03:01:43.485235"
   },
   "scientific-writing": {
     "name": "scientific-writing",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scientific-writing",
     "description": "Scientific Writing",
-    "discovered_at": "2026-03-13T03:01:03.277383"
+    "discovered_at": "2026-03-13T03:01:43.485235"
   },
   "scikit-bio": {
     "name": "scikit-bio",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scikit-bio",
     "description": "scikit-bio",
-    "discovered_at": "2026-03-13T03:01:03.277383"
+    "discovered_at": "2026-03-13T03:01:43.486260"
   },
   "scikit-learn": {
     "name": "scikit-learn",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scikit-learn",
     "description": "Scikit-learn",
-    "discovered_at": "2026-03-13T03:01:03.278380"
+    "discovered_at": "2026-03-13T03:01:43.486260"
   },
   "scikit-survival": {
     "name": "scikit-survival",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scikit-survival",
     "description": "scikit-survival: Survival Analysis in Python",
-    "discovered_at": "2026-03-13T03:01:03.278380"
+    "discovered_at": "2026-03-13T03:01:43.486260"
   },
   "scvi-tools": {
     "name": "scvi-tools",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\scvi-tools",
     "description": "scvi-tools",
-    "discovered_at": "2026-03-13T03:01:03.279377"
+    "discovered_at": "2026-03-13T03:01:43.487264"
   },
   "seaborn": {
     "name": "seaborn",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\seaborn",
     "description": "Seaborn Statistical Visualization",
-    "discovered_at": "2026-03-13T03:01:03.279963"
+    "discovered_at": "2026-03-13T03:01:43.487264"
   },
   "shap": {
     "name": "shap",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\shap",
     "description": "SHAP (SHapley Additive exPlanations)",
-    "discovered_at": "2026-03-13T03:01:03.279963"
+    "discovered_at": "2026-03-13T03:01:43.487800"
   },
   "simpy": {
     "name": "simpy",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\simpy",
     "description": "SimPy - Discrete-Event Simulation",
-    "discovered_at": "2026-03-13T03:01:03.280881"
+    "discovered_at": "2026-03-13T03:01:43.487800"
   },
   "skill-creator": {
     "name": "skill-creator",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\skill-creator",
     "description": "Skill Creator",
-    "discovered_at": "2026-03-13T03:01:03.281878"
+    "discovered_at": "2026-03-13T03:01:43.488828"
   },
   "slack-gif-creator": {
     "name": "slack-gif-creator",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\slack-gif-creator",
     "description": "Slack GIF Creator",
-    "discovered_at": "2026-03-13T03:01:03.133891"
+    "discovered_at": "2026-03-13T03:01:43.354227"
   },
   "stable-baselines3": {
     "name": "stable-baselines3",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\stable-baselines3",
     "description": "Stable Baselines3",
-    "discovered_at": "2026-03-13T03:01:03.282875"
+    "discovered_at": "2026-03-13T03:01:43.488828"
   },
   "state-management": {
     "name": "state-management",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\state-management",
     "description": "State Management",
-    "discovered_at": "2026-03-13T03:01:03.283439"
+    "discovered_at": "2026-03-13T03:01:43.488828"
   },
   "statistical-analysis": {
     "name": "statistical-analysis",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\statistical-analysis",
     "description": "Statistical Analysis",
-    "discovered_at": "2026-03-13T03:01:03.284379"
+    "discovered_at": "2026-03-13T03:01:43.489827"
   },
   "statsmodels": {
     "name": "statsmodels",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\statsmodels",
     "description": "Statsmodels: Statistical Modeling and Econometrics",
-    "discovered_at": "2026-03-13T03:01:03.285378"
+    "discovered_at": "2026-03-13T03:01:43.490459"
   },
   "string-database": {
     "name": "string-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\string-database",
     "description": "STRING Database",
-    "discovered_at": "2026-03-13T03:01:03.285378"
+    "discovered_at": "2026-03-13T03:01:43.490459"
   },
   "subagent-driven-development": {
     "name": "subagent-driven-development",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\subagent-driven-development",
     "description": "Subagent-Driven Development",
-    "discovered_at": "2026-03-13T03:01:03.286375"
+    "discovered_at": "2026-03-13T03:01:43.490459"
   },
   "sympy": {
     "name": "sympy",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\sympy",
     "description": "SymPy - Symbolic Mathematics in Python",
-    "discovered_at": "2026-03-13T03:01:03.286903"
+    "discovered_at": "2026-03-13T03:01:43.491401"
   },
   "systematic-debugging": {
     "name": "systematic-debugging",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\systematic-debugging",
     "description": "Systematic Debugging",
-    "discovered_at": "2026-03-13T03:01:03.286903"
+    "discovered_at": "2026-03-13T03:01:43.491401"
   },
   "template": {
     "name": "template",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\template",
     "description": "Insert instructions below",
-    "discovered_at": "2026-03-13T03:01:03.137004"
+    "discovered_at": "2026-03-13T03:01:43.356844"
   },
   "test-driven-development": {
     "name": "test-driven-development",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\test-driven-development",
     "description": "Test-Driven Development (TDD)",
-    "discovered_at": "2026-03-13T03:01:03.287880"
+    "discovered_at": "2026-03-13T03:01:43.491401"
   },
   "theme-factory": {
     "name": "theme-factory",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\theme-factory",
     "description": "Theme Factory Skill",
-    "discovered_at": "2026-03-13T03:01:03.138009"
+    "discovered_at": "2026-03-13T03:01:43.357774"
   },
   "torch-geometric": {
     "name": "torch-geometric",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\torch-geometric",
     "description": "PyTorch Geometric (PyG)",
-    "discovered_at": "2026-03-13T03:01:03.287880"
+    "discovered_at": "2026-03-13T03:01:43.492398"
   },
   "torchdrug": {
     "name": "torchdrug",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\torchdrug",
     "description": "TorchDrug",
-    "discovered_at": "2026-03-13T03:01:03.288877"
+    "discovered_at": "2026-03-13T03:01:43.492398"
   },
   "transformers": {
     "name": "transformers",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\transformers",
     "description": "Transformers",
-    "discovered_at": "2026-03-13T03:01:03.289875"
+    "discovered_at": "2026-03-13T03:01:43.492398"
   },
   "treatment-plans": {
     "name": "treatment-plans",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\treatment-plans",
     "description": "Treatment Plan Writing",
-    "discovered_at": "2026-03-13T03:01:03.290426"
+    "discovered_at": "2026-03-13T03:01:43.493399"
   },
   "umap-learn": {
     "name": "umap-learn",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\umap-learn",
     "description": "UMAP-Learn",
-    "discovered_at": "2026-03-13T03:01:03.291389"
+    "discovered_at": "2026-03-13T03:01:43.493965"
   },
   "uniprot-database": {
     "name": "uniprot-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\uniprot-database",
     "description": "UniProt Database",
-    "discovered_at": "2026-03-13T03:01:03.291389"
+    "discovered_at": "2026-03-13T03:01:43.493965"
   },
   "using-git-worktrees": {
     "name": "using-git-worktrees",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\using-git-worktrees",
     "description": "Using Git Worktrees",
-    "discovered_at": "2026-03-13T03:01:03.292385"
+    "discovered_at": "2026-03-13T03:01:43.493965"
   },
   "using-superpowers": {
     "name": "using-superpowers",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\using-superpowers",
     "description": "How to Access Skills",
-    "discovered_at": "2026-03-13T03:01:03.292385"
+    "discovered_at": "2026-03-13T03:01:43.493965"
   },
   "uspto-database": {
     "name": "uspto-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\uspto-database",
     "description": "USPTO Database",
-    "discovered_at": "2026-03-13T03:01:03.294384"
+    "discovered_at": "2026-03-13T03:01:43.494969"
   },
   "vaex": {
     "name": "vaex",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\vaex",
     "description": "Vaex",
-    "discovered_at": "2026-03-13T03:01:03.295378"
+    "discovered_at": "2026-03-13T03:01:43.495802"
   },
   "venue-templates": {
     "name": "venue-templates",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\venue-templates",
     "description": "Venue Templates",
-    "discovered_at": "2026-03-13T03:01:03.295378"
+    "discovered_at": "2026-03-13T03:01:43.496931"
   },
   "vercel-composition-patterns": {
     "name": "vercel-composition-patterns",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\vercel-composition-patterns",
     "description": "React Composition Patterns",
-    "discovered_at": "2026-03-13T03:01:03.296376"
+    "discovered_at": "2026-03-13T03:01:43.496931"
   },
   "vercel-react-best-practices": {
     "name": "vercel-react-best-practices",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\vercel-react-best-practices",
     "description": "Vercel React Best Practices",
-    "discovered_at": "2026-03-13T03:01:03.296376"
+    "discovered_at": "2026-03-13T03:01:43.496931"
   },
   "vercel-react-native-skills": {
     "name": "vercel-react-native-skills",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\vercel-react-native-skills",
     "description": "React Native Skills",
-    "discovered_at": "2026-03-13T03:01:03.296376"
+    "discovered_at": "2026-03-13T03:01:43.496931"
   },
   "verification-before-completion": {
     "name": "verification-before-completion",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\verification-before-completion",
     "description": "Verification Before Completion",
-    "discovered_at": "2026-03-13T03:01:03.297374"
+    "discovered_at": "2026-03-13T03:01:43.497940"
   },
   "web-artifacts-builder": {
     "name": "web-artifacts-builder",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\web-artifacts-builder",
     "description": "Web Artifacts Builder",
-    "discovered_at": "2026-03-13T03:01:03.144118"
+    "discovered_at": "2026-03-13T03:01:43.363365"
   },
   "web-design-guidelines": {
     "name": "web-design-guidelines",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\web-design-guidelines",
     "description": "Web Interface Guidelines",
-    "discovered_at": "2026-03-13T03:01:03.297904"
+    "discovered_at": "2026-03-13T03:01:43.497940"
   },
   "webapp-testing": {
     "name": "webapp-testing",
     "path": "C:\\Users\\Administrator\\.claude\\skills\\webapp-testing",
     "description": "Web Application Testing",
-    "discovered_at": "2026-03-13T03:01:03.144118"
+    "discovered_at": "2026-03-13T03:01:43.363933"
   },
   "workflow-automation": {
     "name": "workflow-automation",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\workflow-automation",
     "description": "Workflow Automation",
-    "discovered_at": "2026-03-13T03:01:03.297904"
+    "discovered_at": "2026-03-13T03:01:43.497940"
   },
   "writing-plans": {
     "name": "writing-plans",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\writing-plans",
     "description": "Writing Plans",
-    "discovered_at": "2026-03-13T03:01:03.297904"
+    "discovered_at": "2026-03-13T03:01:43.497940"
   },
   "writing-skills": {
     "name": "writing-skills",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\writing-skills",
     "description": "Writing Skills",
-    "discovered_at": "2026-03-13T03:01:03.298910"
+    "discovered_at": "2026-03-13T03:01:43.498964"
   },
   "xlsx": {
     "name": "xlsx",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\xlsx",
     "description": "Requirements for Outputs",
-    "discovered_at": "2026-03-13T03:01:03.298910"
+    "discovered_at": "2026-03-13T03:01:43.499504"
   },
   "zarr-python": {
     "name": "zarr-python",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\zarr-python",
     "description": "Zarr Python",
-    "discovered_at": "2026-03-13T03:01:03.298910"
+    "discovered_at": "2026-03-13T03:01:43.499504"
   },
   "zinc-database": {
     "name": "zinc-database",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\zinc-database",
     "description": "ZINC Database",
-    "discovered_at": "2026-03-13T03:01:03.299907"
+    "discovered_at": "2026-03-13T03:01:43.500043"
   },
   "memory-persistence": {
     "name": "memory-persistence",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\memory-persistence",
     "description": "",
-    "discovered_at": "2026-03-13T03:01:03.246605"
+    "discovered_at": "2026-03-13T03:01:43.461794"
   },
   "policy-crawler": {
     "name": "policy-crawler",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\policy-crawler",
     "description": "",
-    "discovered_at": "2026-03-13T03:01:03.257939"
+    "discovered_at": "2026-03-13T03:01:43.471620"
   },
   "policy-project-planning": {
     "name": "policy-project-planning",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\policy-project-planning",
     "description": "",
-    "discovered_at": "2026-03-13T03:01:03.257939"
+    "discovered_at": "2026-03-13T03:01:43.472159"
   },
   "skill-auto-updater": {
     "name": "skill-auto-updater",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\skill-auto-updater",
     "description": "/skill-auto-updater — 技能自动更新器",
-    "discovered_at": "2026-03-13T03:01:03.280881"
+    "discovered_at": "2026-03-13T03:01:43.487800"
   },
   "政策知识管理工作流": {
     "name": "政策知识管理工作流",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\政策知识管理工作流",
     "description": "政策知识管理工作流",
-    "discovered_at": "2026-03-13T03:01:03.299907"
+    "discovered_at": "2026-03-13T03:01:43.500043"
   },
   "新闻监测": {
     "name": "新闻监测",
     "path": "C:\\Users\\Administrator\\.trae-cn\\skills\\新闻监测",
     "description": "新闻监测 Skill",
-    "discovered_at": "2026-03-13T03:01:03.300431"
+    "discovered_at": "2026-03-13T03:01:43.500582"
   }
 }

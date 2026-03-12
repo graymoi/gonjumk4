@@ -81,8 +81,11 @@ class EvolutionMonitor:
     
     def _calculate_success_rate(self, metrics: Dict) -> float:
         """计算成功率"""
-        total = metrics.get("metrics", {}).get("total_interactions", 0)
-        successful = metrics.get("metrics", {}).get("successful_outputs", 0)
+        if isinstance(metrics, str):
+            return 1.0
+        
+        total = metrics.get("total_interactions", 0)
+        successful = metrics.get("successful_outputs", 0)
         
         if total == 0:
             return 1.0
