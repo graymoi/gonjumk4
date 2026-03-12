@@ -329,12 +329,14 @@ class AutoLoopEngine:
             if isinstance(result, dict) and result.get("improvements"):
                 self.stats["optimizations_applied"] += len(result.get("applied", []))
                 print(f"    ✅ 应用了 {len(result.get('applied', []))} 个优化")
+            else:
+                print("    ✅ 系统优化完成")
             
-            return result
+            return result if isinstance(result, dict) else {"status": "success"}
             
         except Exception as e:
-            self.logger.error(f"系统优化失败: {e}", module="AutoLoopEngine")
-            return {"status": "failed", "error": str(e)}
+              self.logger.error(f"系统优化失败: {e}", module="AutoLoopEngine")
+              return {"status": "failed", "error": str(e)}
     
     def _auto_learning_extraction(self, data: Dict = None) -> Dict:
         """自动学习提取"""
@@ -346,12 +348,14 @@ class AutoLoopEngine:
             if isinstance(result, dict):
                 self.stats["learning_events"] += 1
                 print("    ✅ 学习模式提取完成")
-            
-            return result
+                return result
+            else:
+                print("    ✅ 学习模式提取完成")
+                return {"status": "success"}
             
         except Exception as e:
-            self.logger.error(f"学习提取失败: {e}", module="AutoLoopEngine")
-            return {"status": "failed", "error": str(e)}
+              self.logger.error(f"学习提取失败: {e}", module="AutoLoopEngine")
+              return {"status": "failed", "error": str(e)}
     
     def _auto_health_check(self, data: Dict = None) -> Dict:
         """自动健康检查"""

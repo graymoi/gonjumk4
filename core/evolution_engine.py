@@ -373,6 +373,9 @@ class EvolutionEngine:
                     try:
                         data = json.loads(line)
                         
+                        if not isinstance(data, dict):
+                            continue
+                        
                         intent = data.get("intent", "")
                         if intent:
                             patterns["common_intents"][intent] = patterns["common_intents"].get(intent, 0) + 1
