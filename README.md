@@ -4,7 +4,7 @@
 
 ## 系统版本
 
-v2.1.0
+v3.0.0
 
 ## 快速开始
 
@@ -16,29 +16,42 @@ python main.py
 python main.py /谋划 老旧小区改造
 python main.py /统计
 python main.py /健康
+
+# Git操作
+python scripts/git_commit.py status
+python scripts/git_commit.py sync -m "提交消息"
+
+# 启动API服务
+uvicorn core.web_api:app --reload
 ```
 
 ## 项目结构
 
 ```
 d:\LMAI\001工具人mk4\
-├── .trae/              # Trae配置
-├── 00_政策法规/         # 政策库
-├── adapters/           # 数据适配器
-├── config/             # 配置文件
-├── core/               # 核心模块
-├── docs/               # 文档
-├── hooks/              # 钩子系统
-├── knowledge/          # 知识库
-├── logs/               # 日志
-├── outputs/            # 输出文件
-├── parts/              # 可复用零件
-├── projects/           # 真实项目
-├── rules/              # 业务规则
-├── scripts/            # 脚本工具
-├── tests/              # 测试文件
-├── main.py             # 主入口
-└── README.md           # 项目说明
+├── .claude/skills/      # Claude Skills
+├── .memory/             # 会话记忆
+├── .trae/               # Trae配置
+├── 00_政策法规/          # 政策库
+├── adapters/            # 数据适配器
+├── config/              # 配置文件
+├── core/                # 核心模块
+│   ├── agent_orchestrator.py  # Agent协作编排
+│   ├── vector_memory.py       # 向量记忆系统
+│   ├── sandbox_executor.py    # 沙箱执行器
+│   └── web_api.py             # Web API服务
+├── docs/                # 文档
+├── hooks/               # 钩子系统
+├── knowledge/           # 知识库
+├── logs/                # 日志
+├── outputs/             # 输出文件
+├── parts/               # 可复用零件
+├── projects/            # 真实项目
+├── rules/               # 业务规则
+├── scripts/             # 脚本工具
+├── tests/               # 测试文件
+├── main.py              # 主入口
+└── README.md            # 项目说明
 ```
 
 ## 核心功能
@@ -60,12 +73,42 @@ d:\LMAI\001工具人mk4\
 
 - **意图识别**: 13种意图类型
 - **工作流引擎**: 11种工作流模板
-- **自动进化**: 自适应学习
-- **持续优化**: 自动检测改进
-- **健康监控**: 告警系统
-- **零件提取**: 7种零件类型
+- **Agent协作**: 多Agent并行/串行执行
+- **向量记忆**: 长期知识存储与检索
+- **沙箱执行**: 安全代码执行环境
+- **Web API**: 商业化API服务
+- **自动Git提交**: 工作流完成后自动提交
+- **持续学习**: 从会话中提取可复用知识
+
+## Agent系统
+
+| Agent | 职责 |
+|-------|------|
+| 政策采集Agent | 自动采集政策、监测动态 |
+| 项目谋划Agent | 项目精准谋划、包装优化 |
+| 项目筛选Agent | 智能筛选、优先级排序 |
+| 政策研究Agent | 政策研究、趋势分析 |
+| 快速组装Agent | 知识库组装、PPT生成 |
+| 数据管理Agent | 数据获取、验证更新 |
+
+## 商业化路径
+
+| 阶段 | 时间 | 目标收入 |
+|------|------|---------|
+| 内部提效 | 当前 | 节省人力成本 |
+| 服务输出 | 3-6个月 | ¥30,000/月 |
+| 平台化 | 6-12个月 | ¥215,000/月 |
 
 ## 更新日志
+
+### v3.0.0 (2026-03-13)
+- 新增Agent协作编排器
+- 新增向量记忆系统
+- 新增沙箱执行器
+- 新增Web API服务
+- 新增自动Git提交功能
+- 新增持续学习Skills
+- 架构改进（借鉴DeerFlow）
 
 ### v2.1.0 (2026-03-12)
 - 新增持续优化模块
@@ -80,6 +123,10 @@ d:\LMAI\001工具人mk4\
 - 新增进化监控
 - 新增钩子系统
 - 新增测试系统
+
+## 远程仓库
+
+https://github.com/graymoi/LMAI002.git
 
 ## 许可证
 
