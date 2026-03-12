@@ -326,7 +326,7 @@ class AutoLoopEngine:
             
             result = self.continuous_optimizer.run_optimization_cycle()
             
-            if result.get("improvements"):
+            if isinstance(result, dict) and result.get("improvements"):
                 self.stats["optimizations_applied"] += len(result.get("applied", []))
                 print(f"    ✅ 应用了 {len(result.get('applied', []))} 个优化")
             
@@ -343,7 +343,7 @@ class AutoLoopEngine:
             
             result = self.evolution_engine.analyze_patterns()
             
-            if result:
+            if isinstance(result, dict):
                 self.stats["learning_events"] += 1
                 print("    ✅ 学习模式提取完成")
             
