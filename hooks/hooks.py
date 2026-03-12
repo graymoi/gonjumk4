@@ -4,10 +4,21 @@
 """
 
 import json
+import subprocess
+import yaml
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, Optional, Callable
 from core.logger import get_system_logger
+
+
+def load_config() -> Dict:
+    """加载系统配置"""
+    config_path = Path("config/system_config.yaml")
+    if config_path.exists():
+        with open(config_path, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+    return {"git": {"auto_commit": False}}
 
 
 class HookManager:
@@ -65,6 +76,58 @@ class HookManager:
         }
 
 
+def git_commit(context: Dict) -> Dict:
+    """Git自动提交"""
+    
+    logger = get_system_logger()
+    config = load_config()
+    git_config = config.get("git", {})
+    
+    if not git_config.get("auto_commit", False):
+        return {"status": "skipped", "reason": "auto_commit disabled"}
+    
+    try:
+        scenario = context.get("workflow_result", {}).get("scenario", "工作流完成")
+        message_template = git_config.get("commit_message_template", "feat: 完成{scenario}")
+        commit_message = message_template.format(scenario=scenario)
+        
+        result = subprocess.run(
+            ["git", "status", "--porcelain"],
+            capture_output=True,
+            text=True,
+            cwd=Path.cwd()
+        )
+        
+        if not result.stdout.strip():
+            return {"status": "skipped", "reason": "no changes"}
+        
+        subprocess.run(["git", "add", "."], cwd=Path.cwd(), check=True)
+        
+        subprocess.run(
+            ["git", "commit", "-m", commit_message],
+            cwd=Path.cwd(),
+            check=True
+        )
+        
+        logger.info(f"Git提交成功: {commit_message}", module="hooks")
+        
+        if git_config.get("auto_push", False):
+            subprocess.run(["git", "push"], cwd=Path.cwd(), check=True)
+            logger.info("Git推送成功", module="hooks")
+        
+        return {
+            "status": "committed",
+            "message": commit_message,
+            "files_changed": len(result.stdout.strip().split('\n'))
+        }
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Git提交失败: {e}", module="hooks")
+        return {"status": "error", "error": str(e)}
+    except Exception as e:
+        logger.error(f"Git提交异常: {e}", module="hooks")
+        return {"status": "error", "error": str(e)}
+
+
 def pre_workflow_hook(context: Dict) -> Dict:
     """工作流执行前钩子"""
     
@@ -93,7 +156,11 @@ def post_workflow_hook(context: Dict) -> Dict:
     
     logger.info(f"工作流完成: {scenario}", module="hooks")
     
-    return {"status": "logged"}
+    git_result = git_commit(context)
+    if git_result.get("status") == "committed":
+        logger.info(f"自动提交: {git_result.get('message')}", module="hooks")
+    
+    return {"status": "logged", "git": git_result}
 
 
 def on_error_hook(context: Dict) -> Dict:
