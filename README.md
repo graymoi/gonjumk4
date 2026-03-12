@@ -1,16 +1,42 @@
 # 城乡建设政策知识服务系统
 
-> 可生长、自动进化的AI自动化系统
+> 可生长、自动进化的AI自动化系统 - 支持持续自动化工作(Loop功能)
 
 ## 系统版本
 
-v3.0.0
+v3.0.0 - 自动化循环工作版
+
+## 核心特性
+
+### 🔄 自动化循环工作 (Loop功能)
+- **持续自动化**: 无需人工干预，自动执行循环任务
+- **智能调度**: 优先级任务队列，自动调度执行
+- **自我进化**: 从交互中学习，持续优化系统
+
+### 🧠 持续学习引擎
+- **模式提取**: 自动从会话中提取可复用模式
+- **知识进化**: 模式置信度动态调整，过期模式自动清理
+- **技能生成**: 高频模式自动转化为可复用技能
+
+### 📋 智能工作流编排
+- **动态工作流**: 根据需求自动生成工作流
+- **并行执行**: 多任务并行处理，提升效率
+- **依赖管理**: 自动处理任务依赖关系
 
 ## 快速开始
 
 ```bash
 # 交互模式
 python main.py
+
+# 启动自动化循环 (推荐)
+python main.py /loop start
+
+# 执行单次循环
+python main.py /loop once
+
+# 查看循环状态
+python main.py /loop status
 
 # 命令模式
 python main.py /谋划 老旧小区改造
@@ -23,6 +49,9 @@ python scripts/git_commit.py sync -m "提交消息"
 
 # 启动API服务
 uvicorn core.web_api:app --reload
+
+# 运行测试
+python tests/test_auto_system.py
 ```
 
 ## 项目结构
@@ -36,20 +65,27 @@ d:\LMAI\001工具人mk4\
 ├── adapters/            # 数据适配器
 ├── config/              # 配置文件
 ├── core/                # 核心模块
-│   ├── agent_orchestrator.py  # Agent协作编排
-│   ├── vector_memory.py       # 向量记忆系统
-│   ├── sandbox_executor.py    # 沙箱执行器
-│   └── web_api.py             # Web API服务
+│   ├── auto_loop_engine.py      # 自动循环引擎 ⭐
+│   ├── workflow_scheduler.py    # 工作流调度器 ⭐
+│   ├── continuous_learning.py   # 持续学习引擎 ⭐
+│   ├── agent_orchestrator.py    # Agent协作编排
+│   ├── vector_memory.py         # 向量记忆系统
+│   ├── sandbox_executor.py      # 沙箱执行器
+│   └── web_api.py               # Web API服务
 ├── docs/                # 文档
 ├── hooks/               # 钩子系统
 ├── knowledge/           # 知识库
+│   └── learning_patterns.json   # 学习模式存储
 ├── logs/                # 日志
+│   ├── loop_state.json          # 循环状态
+│   └── scheduler_state.json     # 调度器状态
 ├── outputs/             # 输出文件
 ├── parts/               # 可复用零件
 ├── projects/            # 真实项目
 ├── rules/               # 业务规则
 ├── scripts/             # 脚本工具
 ├── tests/               # 测试文件
+│   └── test_auto_system.py      # 自动化系统测试 ⭐
 ├── main.py              # 主入口
 └── README.md            # 项目说明
 ```
@@ -58,6 +94,10 @@ d:\LMAI\001工具人mk4\
 
 | 功能 | 命令 | 说明 |
 |------|------|------|
+| **自动化循环** | /loop start | 启动持续自动化工作 ⭐ |
+| **循环状态** | /loop status | 查看循环运行状态 |
+| **任务调度** | /调度 add/list/stats | 智能任务调度 |
+| **持续学习** | /学习 report/evolve | 自我进化学习 |
 | 项目谋划 | /谋划 | 项目精准谋划 |
 | 项目筛选 | /筛选 | 项目智能筛选 |
 | 政策研究 | /研究 | 政策趋势分析 |

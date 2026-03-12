@@ -1,0 +1,53 @@
+{
+  "patterns": {
+    "intent_project_planning_20260313025632": {
+      "pattern_id": "intent_project_planning_20260313025632",
+      "pattern_type": "intent_recognition",
+      "content": "{\"intent_type\": \"project_planning\", \"keywords\": [\"\\u8001\\u65e7\\u5c0f\\u533a\", \"\\u6539\\u9020\"], \"confidence\": 0.85}",
+      "confidence": 0.6,
+      "usage_count": 0,
+      "created_at": "2026-03-13T02:56:32.788432",
+      "last_used": null,
+      "success_rate": 0.0,
+      "tags": [
+        "intent",
+        "project_planning"
+      ]
+    },
+    "skill_research-lookup_20260313025632": {
+      "pattern_id": "skill_research-lookup_20260313025632",
+      "pattern_type": "skill_usage",
+      "content": "{\"skill_name\": \"research-lookup\", \"context\": \"\\u9879\\u76ee\\u8c0b\\u5212\"}",
+      "confidence": 0.6,
+      "usage_count": 0,
+      "created_at": "2026-03-13T02:56:32.788432",
+      "last_used": null,
+      "success_rate": 0.0,
+      "tags": [
+        "skill",
+        "research-lookup"
+      ]
+    },
+    "skill_office_20260313025632": {
+      "pattern_id": "skill_office_20260313025632",
+      "pattern_type": "skill_usage",
+      "content": "{\"skill_name\": \"office\", \"context\": \"\\u9879\\u76ee\\u8c0b\\u5212\"}",
+      "confidence": 0.6,
+      "usage_count": 0,
+      "created_at": "2026-03-13T02:56:32.788432",
+      "last_used": null,
+      "success_rate": 0.0,
+      "tags": [
+        "skill",
+        "office"
+      ]
+    }
+  },
+  "stats": {
+    "total_patterns": 3,
+    "patterns_applied": 0,
+    "learning_events": 1,
+    "improvements": 0
+  },
+  "last_update": "2026-03-13T02:56:32.789957"
+}
