@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背街小巷体检平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                    </svg>
+                </div>
+                <span class="font-semibold text-lg">背街小巷体检</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+                <a href="#features" class="hover:text-gray-900 transition">功能</a>
+                <a href="#users" class="hover:text-gray-900 transition">用户</a>
+                <a href="#about" class="hover:text-gray-900 transition">关于</a>
+            </div>
+            <button class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">
+                开始使用
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section class="min-h-[80vh] flex items-center justify-center px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-sm text-gray-500 mb-4 fade-in">城市精细化管理解决方案</p>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 fade-in delay-1">
+                    <span class="gradient-text">背街小巷</span>
+                    <br>
+                    <span class="text-gray-900">智能体检平台</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto fade-in delay-2">
+                    巡查. 评分. 派发. 统计.
+                    <br>
+                    <span class="text-gray-400">No complexity, just solutions.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in delay-3">
+                    <button class="bg-gray-900 text-white px-8 py-3 rounded-xl font-medium hover:bg-gray-800 transition flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        演示视频
+                    </button>
+                    <button class="bg-white text-gray-900 px-8 py-3 rounded-xl font-medium border border-gray-200 hover:border-gray-300 transition flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        查看文档
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 px-6 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-sm text-indigo-600 font-medium mb-2">核心功能</p>
+                    <h2 class="text-3xl font-bold">四大模块，全流程覆盖</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">问题巡查</h3>
+                        <p class="text-gray-600 text-sm">拍照/视频巡查，AI自动识别破损、垃圾、违建等问题</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">体检评分</h3>
+                        <p class="text-gray-600 text-sm">多维度评估体系，自动生成体检报告和整改建议</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">任务派发</h3>
+                        <p class="text-gray-600 text-sm">智能派发任务到街道/社区，全程追踪整改进度</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">数据统计</h3>
+                        <p class="text-gray-600 text-sm">可视化数据大屏，多维度统计报表，辅助决策</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="users" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-sm text-indigo-600 font-medium mb-2">服务对象</p>
+                    <h2 class="text-3xl font-bold">多角色协同，全流程闭环</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-xl mb-2">政府部门</h3>
+                        <p class="text-gray-600">住建局、城管局等管理部门<br>统筹监管、考核评估</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-xl mb-2">街道社区</h3>
+                        <p class="text-gray-600">基层街道、社区工作人员<br>日常巡查、整改落实</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-xl mb-2">第三方机构</h3>
+                        <p class="text-gray-600">评估机构、咨询公司<br>专业评估、技术服务</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-6 bg-gray-900 text-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">开始使用</h2>
+                <p class="text-gray-400 mb-8">快速部署，即刻体验智能体检</p>
+                <div class="bg-gray-800 rounded-xl p-6 inline-block">
+                    <code class="text-green-400 text-sm">
+                        <span class="text-gray-500">$</span> npx street-checkup@latest install
+                    </code>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 px-6 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-sm text-indigo-600 font-medium mb-2">关于平台</p>
+                        <h2 class="text-3xl font-bold mb-4">让城市管理更精细</h2>
+                        <p class="text-gray-600 mb-6">
+                            背街小巷体检平台是面向城市精细化管理的智能化解决方案。
+                            通过AI技术赋能，实现背街小巷问题的智能发现、精准评估、高效整改，
+                            助力城市品质提升。
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">AI智能识别，问题发现率提升80%</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">标准化评估，体检报告自动生成</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">闭环管理，整改效率提升60%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl p-8">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-indigo-600">500+</div>
+                                <div class="text-gray-600 text-sm mt-1">已接入街道</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-purple-600">10万+</div>
+                                <div class="text-gray-600 text-sm mt-1">巡查记录</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-green-600">95%</div>
+                                <div class="text-gray-600 text-sm mt-1">整改完成率</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-orange-600">80%</div>
+                                <div class="text-gray-600 text-sm mt-1">效率提升</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-50 border-t border-gray-100 py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                        </svg>
+                    </div>
+                    <span class="font-semibold">背街小巷体检平台</span>
+                </div>
+                <div class="flex items-center gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-gray-900 transition">隐私政策</a>
+                    <a href="#" class="hover:text-gray-900 transition">服务条款</a>
+                    <a href="#" class="hover:text-gray-900 transition">联系我们</a>
+                </div>
+                <p class="text-sm text-gray-400">© 2026 背街小巷体检平台</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
