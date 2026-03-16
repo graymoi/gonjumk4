@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>背街小巷体检平台</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
@@ -14,17 +12,16 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .tab-active { border-bottom: 2px solid #4f46e5; color: #4f46e5; }
-        .progress-bar { transition: width 0.5s ease; }
+        .tab-active { border-bottom: 2px solid #4f46e5; color: #4f46e5; background: #eef2ff; }
+        .modal { display: none; }
+        .modal.active { display: flex; }
+        .progress-bar { transition: width 0.3s ease; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
-    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,11 +30,11 @@
                 </div>
                 <span class="font-semibold text-lg">背街小巷体检平台</span>
             </div>
-            <div class="flex items-center gap-6 text-sm text-gray-600">
-                <a href="#overview" class="hover:text-gray-900 transition">概览</a>
-                <a href="#issues" class="hover:text-gray-900 transition">问题巡查</a>
-                <a href="#inspections" class="hover:text-gray-900 transition">体检评分</a>
-                <a href="#tasks" class="hover:text-gray-900 transition">任务派发</a>
+            <div class="flex items-center gap-2" id="nav-tabs">
+                <button onclick="showTab('overview')" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition" data-tab="overview">概览</button>
+                <button onclick="showTab('issues')" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition" data-tab="issues">问题巡查</button>
+                <button onclick="showTab('inspections')" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition" data-tab="inspections">体检评分</button>
+                <button onclick="showTab('tasks')" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition" data-tab="tasks">任务派发</button>
             </div>
             <div class="flex items-center gap-3">
                 <span class="text-sm text-gray-500">演示模式</span>
@@ -46,142 +43,39 @@
         </div>
     </nav>
 
-    <main class="pt-20">
+    <main class="pt-20 pb-8">
         <!-- 概览 -->
-        <section id="overview" class="py-8 px-6">
+        <section id="tab-overview" class="tab-content px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="mb-8">
                     <h1 class="text-2xl font-bold text-gray-900">工作概览</h1>
                     <p class="text-gray-500 mt-1">欢迎回来，系统管理员</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                    <div class="bg-white rounded-2xl p-6 border border-gray-100">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-sm text-gray-500">问题总数</p>
-                                <p class="text-3xl font-bold text-gray-900 mt-1">24</p>
-                            </div>
-                            <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
-                                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <p class="text-sm text-orange-600 mt-4">8 待处理</p>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-6 border border-gray-100">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-sm text-gray-500">任务总数</p>
-                                <p class="text-3xl font-bold text-gray-900 mt-1">18</p>
-                            </div>
-                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <p class="text-sm text-green-600 mt-4">12 已完成</p>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-6 border border-gray-100">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-sm text-gray-500">体检次数</p>
-                                <p class="text-3xl font-bold text-gray-900 mt-1">6</p>
-                            </div>
-                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-6 border border-gray-100">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-sm text-gray-500">完成率</p>
-                                <p class="text-3xl font-bold text-gray-900 mt-1">67%</p>
-                            </div>
-                            <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" id="stats-cards"></div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="bg-white rounded-2xl border border-gray-100 p-6">
                         <h3 class="font-semibold text-gray-900 mb-4">最近问题</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                                <div>
-                                    <p class="font-medium text-gray-900">XX路路面破损严重</p>
-                                    <p class="text-sm text-gray-500">XX路与YY路交叉口</p>
-                                </div>
-                                <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded-lg text-xs font-medium">高</span>
-                            </div>
-                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                                <div>
-                                    <p class="font-medium text-gray-900">XX小区门口垃圾堆积</p>
-                                    <p class="text-sm text-gray-500">XX小区东门</p>
-                                </div>
-                                <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-xs font-medium">中</span>
-                            </div>
-                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                                <div>
-                                    <p class="font-medium text-gray-900">XX巷路灯不亮</p>
-                                    <p class="text-sm text-gray-500">XX巷3号至5号</p>
-                                </div>
-                                <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-xs font-medium">中</span>
-                            </div>
-                        </div>
+                        <div id="recent-issues" class="space-y-4"></div>
                     </div>
-
                     <div class="bg-white rounded-2xl border border-gray-100 p-6">
                         <h3 class="font-semibold text-gray-900 mb-4">最近任务</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                                <div>
-                                    <p class="font-medium text-gray-900">XX路路面修复</p>
-                                    <p class="text-sm text-gray-500">截止：2026-03-25</p>
-                                </div>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-lg text-xs font-medium">待派发</span>
-                            </div>
-                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                                <div>
-                                    <p class="font-medium text-gray-900">XX小区垃圾清理</p>
-                                    <p class="text-sm text-gray-500">截止：2026-03-20</p>
-                                </div>
-                                <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-xs font-medium">已派发</span>
-                            </div>
-                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                                <div>
-                                    <p class="font-medium text-gray-900">XX巷路灯维修</p>
-                                    <p class="text-sm text-gray-500">截止：2026-03-18</p>
-                                </div>
-                                <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-xs font-medium">处理中</span>
-                            </div>
-                        </div>
+                        <div id="recent-tasks" class="space-y-4"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 问题巡查 -->
-        <section id="issues" class="py-8 px-6 bg-white">
+        <section id="tab-issues" class="tab-content px-6 hidden">
             <div class="max-w-7xl mx-auto">
                 <div class="flex justify-between items-center mb-8">
                     <div>
                         <h2 class="text-2xl font-bold text-gray-900">问题巡查</h2>
                         <p class="text-gray-500 mt-1">管理和追踪所有上报的问题</p>
                     </div>
-                    <button class="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition flex items-center gap-2">
+                    <button onclick="openIssueModal()" class="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                         </svg>
@@ -200,65 +94,28 @@
                                     <th class="text-left px-6 py-4 text-sm font-medium text-gray-500">位置</th>
                                     <th class="text-left px-6 py-4 text-sm font-medium text-gray-500">状态</th>
                                     <th class="text-left px-6 py-4 text-sm font-medium text-gray-500">上报时间</th>
+                                    <th class="text-left px-6 py-4 text-sm font-medium text-gray-500">操作</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-gray-100">
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4 font-medium text-gray-900">XX路路面破损严重</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">道路破损</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded-lg text-xs font-medium">高</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">XX路与YY路交叉口</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-lg text-xs font-medium">待处理</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">2026-03-10</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4 font-medium text-gray-900">XX小区门口垃圾堆积</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">垃圾堆积</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-xs font-medium">中</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">XX小区东门</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-xs font-medium">已派发</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">2026-03-11</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4 font-medium text-gray-900">XX巷路灯不亮</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">照明问题</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-xs font-medium">中</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">XX巷3号至5号</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-xs font-medium">处理中</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">2026-03-08</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4 font-medium text-gray-900">XX街违章搭建</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">违建</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded-lg text-xs font-medium">高</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">XX街12号</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-green-100 text-green-700 rounded-lg text-xs font-medium">已完成</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">2026-03-05</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4 font-medium text-gray-900">YY路排水堵塞</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">排水问题</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-red-100 text-red-700 rounded-lg text-xs font-medium">紧急</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">YY路88号</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-medium">已核实</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">2026-03-01</td>
-                                </tr>
-                            </tbody>
+                            <tbody id="issues-table" class="divide-y divide-gray-100"></tbody>
                         </table>
+                    </div>
+                    <div id="issues-empty" class="hidden p-12 text-center text-gray-500">
+                        暂无问题记录，点击"上报问题"添加
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 体检评分 -->
-        <section id="inspections" class="py-8 px-6">
+        <section id="tab-inspections" class="tab-content px-6 hidden">
             <div class="max-w-7xl mx-auto">
                 <div class="flex justify-between items-center mb-8">
                     <div>
                         <h2 class="text-2xl font-bold text-gray-900">体检评分</h2>
                         <p class="text-gray-500 mt-1">街道体检评估记录</p>
                     </div>
-                    <button class="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition flex items-center gap-2">
+                    <button onclick="openInspectionModal()" class="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                         </svg>
@@ -266,418 +123,23 @@
                     </button>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-white rounded-2xl p-6 border border-gray-100">
-                        <p class="text-sm text-gray-500">体检总数</p>
-                        <p class="text-3xl font-bold text-gray-900 mt-1">6</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-6 border border-gray-100">
-                        <p class="text-sm text-gray-500">平均分数</p>
-                        <p class="text-3xl font-bold text-indigo-600 mt-1">82.4</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-6 border border-gray-100">
-                        <p class="text-sm text-gray-500">本月体检</p>
-                        <p class="text-3xl font-bold text-green-600 mt-1">2</p>
-                    </div>
-                </div>
-
-                <!-- 体检表格1 -->
-                <div class="bg-white rounded-2xl border border-gray-100 mb-6 overflow-hidden">
-                    <div class="p-6 border-b border-gray-100">
-                        <h3 class="font-semibold text-lg text-gray-900">XX街道2026年第一季度体检</h3>
-                        <p class="text-sm text-gray-500 mt-1">体检日期：2026-03-01 · 总分：<span class="font-bold text-indigo-600">85.5</span></p>
-                        <p class="text-sm text-gray-600 mt-2">整体情况良好，部分路段需要改进</p>
-                    </div>
-                    
-                    <div class="overflow-x-auto">
-                        <table class="w-full">
-                            <thead class="bg-gray-50">
-                                <tr>
-                                    <th class="text-left px-6 py-3 text-sm font-medium text-gray-500 w-32">评估维度</th>
-                                    <th class="text-left px-6 py-3 text-sm font-medium text-gray-500">评估项目</th>
-                                    <th class="text-center px-6 py-3 text-sm font-medium text-gray-500 w-24">得分</th>
-                                    <th class="text-center px-6 py-3 text-sm font-medium text-gray-500 w-24">满分</th>
-                                    <th class="text-center px-6 py-3 text-sm font-medium text-gray-500 w-32">得分率</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-100">
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-100 align-top" rowspan="3">环境卫生</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">道路清洁度</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">垃圾清运</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">9</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 90%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">90%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">公共设施卫生</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-100 align-top" rowspan="3">市容市貌</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">建筑外立面</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">9</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 90%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">90%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">广告招牌</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">绿化景观</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">9</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 90%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">90%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-100 align-top" rowspan="3">基础设施</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">道路平整度</td>
-                                    <td class="px-6 py-4 text-center font-bold text-yellow-600">7</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-yellow-500 rounded-full progress-bar" style="width: 70%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">70%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">照明设施</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">排水设施</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">9</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 90%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">90%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-100 align-top" rowspan="3">秩序管理</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">占道经营</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">车辆停放</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">违章搭建</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">9</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 90%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">90%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tfoot class="bg-gray-50 border-t-2 border-gray-200">
-                                <tr>
-                                    <td colspan="2" class="px-6 py-4 font-bold text-gray-900 text-right">总分</td>
-                                    <td class="px-6 py-4 text-center font-bold text-2xl text-indigo-600">100</td>
-                                    <td class="px-6 py-4 text-center font-bold text-gray-500">120</td>
-                                    <td class="px-6 py-4 text-center font-bold text-indigo-600">85.5%</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- 体检表格2 -->
-                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
-                    <div class="p-6 border-b border-gray-100">
-                        <h3 class="font-semibold text-lg text-gray-900">YY街道2026年第一季度体检</h3>
-                        <p class="text-sm text-gray-500 mt-1">体检日期：2026-03-05 · 总分：<span class="font-bold text-indigo-600">78.3</span></p>
-                        <p class="text-sm text-gray-600 mt-2">环境卫生需要加强</p>
-                    </div>
-                    
-                    <div class="overflow-x-auto">
-                        <table class="w-full">
-                            <thead class="bg-gray-50">
-                                <tr>
-                                    <th class="text-left px-6 py-3 text-sm font-medium text-gray-500 w-32">评估维度</th>
-                                    <th class="text-left px-6 py-3 text-sm font-medium text-gray-500">评估项目</th>
-                                    <th class="text-center px-6 py-3 text-sm font-medium text-gray-500 w-24">得分</th>
-                                    <th class="text-center px-6 py-3 text-sm font-medium text-gray-500 w-24">满分</th>
-                                    <th class="text-center px-6 py-3 text-sm font-medium text-gray-500 w-32">得分率</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-100">
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-100 align-top" rowspan="3">环境卫生</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">道路清洁度</td>
-                                    <td class="px-6 py-4 text-center font-bold text-yellow-600">7</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-yellow-500 rounded-full progress-bar" style="width: 70%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">70%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">垃圾清运</td>
-                                    <td class="px-6 py-4 text-center font-bold text-red-600">6</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-red-500 rounded-full progress-bar" style="width: 60%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">60%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">公共设施卫生</td>
-                                    <td class="px-6 py-4 text-center font-bold text-yellow-600">7</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-yellow-500 rounded-full progress-bar" style="width: 70%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">70%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-100 align-top" rowspan="3">市容市貌</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">建筑外立面</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">广告招牌</td>
-                                    <td class="px-6 py-4 text-center font-bold text-yellow-600">7</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-yellow-500 rounded-full progress-bar" style="width: 70%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">70%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">绿化景观</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-100 align-top" rowspan="3">基础设施</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">道路平整度</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">照明设施</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">9</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 90%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">90%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">排水设施</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-100 align-top" rowspan="3">秩序管理</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">占道经营</td>
-                                    <td class="px-6 py-4 text-center font-bold text-yellow-600">7</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-yellow-500 rounded-full progress-bar" style="width: 70%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">70%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">车辆停放</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 text-sm text-gray-600">违章搭建</td>
-                                    <td class="px-6 py-4 text-center font-bold text-green-600">8</td>
-                                    <td class="px-6 py-4 text-center text-sm text-gray-500">10</td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                <div class="h-full bg-green-500 rounded-full progress-bar" style="width: 80%"></div>
-                                            </div>
-                                            <span class="text-xs text-gray-500">80%</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tfoot class="bg-gray-50 border-t-2 border-gray-200">
-                                <tr>
-                                    <td colspan="2" class="px-6 py-4 font-bold text-gray-900 text-right">总分</td>
-                                    <td class="px-6 py-4 text-center font-bold text-2xl text-indigo-600">91</td>
-                                    <td class="px-6 py-4 text-center font-bold text-gray-500">120</td>
-                                    <td class="px-6 py-4 text-center font-bold text-indigo-600">78.3%</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" id="inspection-stats"></div>
+                <div id="inspections-list" class="space-y-6"></div>
+                <div id="inspections-empty" class="hidden bg-white rounded-2xl border border-gray-100 p-12 text-center text-gray-500">
+                    暂无体检记录，点击"新建体检"添加
                 </div>
             </div>
         </section>
 
         <!-- 任务派发 -->
-        <section id="tasks" class="py-8 px-6 bg-white">
+        <section id="tab-tasks" class="tab-content px-6 hidden">
             <div class="max-w-7xl mx-auto">
                 <div class="flex justify-between items-center mb-8">
                     <div>
                         <h2 class="text-2xl font-bold text-gray-900">任务派发</h2>
                         <p class="text-gray-500 mt-1">任务分配与进度追踪</p>
                     </div>
-                    <button class="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition flex items-center gap-2">
+                    <button onclick="openTaskModal()" class="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                         </svg>
@@ -685,28 +147,7 @@
                     </button>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-                    <div class="bg-white rounded-2xl p-4 border border-gray-100 text-center">
-                        <p class="text-sm text-gray-500">待派发</p>
-                        <p class="text-2xl font-bold text-gray-600 mt-1">3</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-4 border border-gray-100 text-center">
-                        <p class="text-sm text-gray-500">已派发</p>
-                        <p class="text-2xl font-bold text-blue-600 mt-1">2</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-4 border border-gray-100 text-center">
-                        <p class="text-sm text-gray-500">处理中</p>
-                        <p class="text-2xl font-bold text-yellow-600 mt-1">1</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-4 border border-gray-100 text-center">
-                        <p class="text-sm text-gray-500">已完成</p>
-                        <p class="text-2xl font-bold text-green-600 mt-1">1</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-4 border border-gray-100 text-center">
-                        <p class="text-sm text-gray-500">已核实</p>
-                        <p class="text-2xl font-bold text-indigo-600 mt-1">1</p>
-                    </div>
-                </div>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8" id="task-stats"></div>
 
                 <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
                     <div class="overflow-x-auto">
@@ -719,108 +160,706 @@
                                     <th class="text-left px-6 py-4 text-sm font-medium text-gray-500">负责人</th>
                                     <th class="text-left px-6 py-4 text-sm font-medium text-gray-500">截止日期</th>
                                     <th class="text-left px-6 py-4 text-sm font-medium text-gray-500">关联问题</th>
+                                    <th class="text-left px-6 py-4 text-sm font-medium text-gray-500">操作</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-gray-100">
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4">
-                                        <div>
-                                            <span class="font-medium text-gray-900">XX路路面修复</span>
-                                            <p class="text-sm text-gray-500 mt-1">对XX路与YY路交叉口的路面破损进行修复</p>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-lg text-xs font-medium">待派发</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">高</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">张三</td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">2026-03-25</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-600">XX路路面破损严重</span></td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4">
-                                        <div>
-                                            <span class="font-medium text-gray-900">XX小区垃圾清理</span>
-                                            <p class="text-sm text-gray-500 mt-1">清理XX小区门口堆积的垃圾</p>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-xs font-medium">已派发</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">中</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">张三</td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">2026-03-20</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-600">XX小区门口垃圾堆积</span></td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4">
-                                        <div>
-                                            <span class="font-medium text-gray-900">XX巷路灯维修</span>
-                                            <p class="text-sm text-gray-500 mt-1">维修XX巷3号至5号路段的路灯</p>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-xs font-medium">处理中</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">中</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">张三</td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">2026-03-18</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-600">XX巷路灯不亮</span></td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4">
-                                        <div>
-                                            <span class="font-medium text-gray-900">XX街违建拆除</span>
-                                            <p class="text-sm text-gray-500 mt-1">拆除XX街12号门前的违章搭建</p>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-green-100 text-green-700 rounded-lg text-xs font-medium">已完成</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">高</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">张三</td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">-</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-600">XX街违章搭建</span></td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4">
-                                        <div>
-                                            <span class="font-medium text-gray-900">YY路排水疏通</span>
-                                            <p class="text-sm text-gray-500 mt-1">疏通YY路88号排水管道</p>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-medium">已核实</span></td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">紧急</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">李四</td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">2026-03-05</td>
-                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-600">YY路排水堵塞</span></td>
-                                </tr>
-                            </tbody>
+                            <tbody id="tasks-table" class="divide-y divide-gray-100"></tbody>
                         </table>
+                    </div>
+                    <div id="tasks-empty" class="hidden p-12 text-center text-gray-500">
+                        暂无任务记录，点击"派发任务"添加
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-50 border-t border-gray-100 py-8 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
-                        </svg>
-                    </div>
-                    <span class="font-semibold">背街小巷体检平台</span>
-                </div>
-                <p class="text-sm text-gray-400">© 2026 背街小巷体检平台 · 演示模式</p>
+    <!-- 问题上报弹窗 -->
+    <div id="issue-modal" class="modal fixed inset-0 bg-black/50 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-lg font-semibold">上报问题</h3>
             </div>
+            <form id="issue-form" class="p-6 space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">问题标题 *</label>
+                    <input type="text" name="title" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="简要描述问题">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">问题类型 *</label>
+                    <select name="type" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white">
+                        <option value="ROAD_DAMAGE">道路破损</option>
+                        <option value="GARBAGE">垃圾堆积</option>
+                        <option value="ILLEGAL_CONSTRUCTION">违建</option>
+                        <option value="SIGNAGE">招牌问题</option>
+                        <option value="LIGHTING">照明问题</option>
+                        <option value="DRAINAGE">排水问题</option>
+                        <option value="GREEN_SPACE">绿化问题</option>
+                        <option value="OTHER">其他</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">严重程度 *</label>
+                    <select name="severity" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white">
+                        <option value="LOW">低</option>
+                        <option value="MEDIUM" selected>中</option>
+                        <option value="HIGH">高</option>
+                        <option value="URGENT">紧急</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">问题位置 *</label>
+                    <input type="text" name="location" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="详细地址">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">问题描述</label>
+                    <textarea name="description" rows="3" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none resize-none" placeholder="详细描述问题情况..."></textarea>
+                </div>
+                <div class="flex gap-4 pt-4">
+                    <button type="button" onclick="closeIssueModal()" class="flex-1 py-3 rounded-xl border border-gray-200 text-gray-700 font-medium hover:bg-gray-50 transition">取消</button>
+                    <button type="submit" class="flex-1 py-3 rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 transition">提交</button>
+                </div>
+            </form>
         </div>
-    </footer>
+    </div>
+
+    <!-- 体检评分弹窗 -->
+    <div id="inspection-modal" class="modal fixed inset-0 bg-black/50 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-lg font-semibold">新建体检</h3>
+            </div>
+            <form id="inspection-form" class="p-6">
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">体检标题 *</label>
+                    <input type="text" name="title" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="例：XX街道2026年第一季度体检">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">备注</label>
+                    <textarea name="notes" rows="2" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none resize-none" placeholder="体检备注..."></textarea>
+                </div>
+                <div class="space-y-6" id="score-inputs"></div>
+                <div class="flex gap-4 pt-6">
+                    <button type="button" onclick="closeInspectionModal()" class="flex-1 py-3 rounded-xl border border-gray-200 text-gray-700 font-medium hover:bg-gray-50 transition">取消</button>
+                    <button type="submit" class="flex-1 py-3 rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 transition">提交体检</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 任务派发弹窗 -->
+    <div id="task-modal" class="modal fixed inset-0 bg-black/50 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-lg font-semibold">派发任务</h3>
+            </div>
+            <form id="task-form" class="p-6 space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">任务标题 *</label>
+                    <input type="text" name="title" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="输入任务标题">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">任务描述</label>
+                    <textarea name="description" rows="3" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none resize-none" placeholder="详细描述任务内容..."></textarea>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">负责人 *</label>
+                        <select name="assignee" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white">
+                            <option value="张三">张三</option>
+                            <option value="李四">李四</option>
+                            <option value="王五">王五</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">优先级</label>
+                        <select name="priority" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white">
+                            <option value="1">低</option>
+                            <option value="2" selected>中</option>
+                            <option value="3">高</option>
+                            <option value="4">紧急</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">截止日期</label>
+                    <input type="date" name="deadline" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">关联问题</label>
+                    <select name="issueId" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white">
+                        <option value="">不关联</option>
+                    </select>
+                </div>
+                <div class="flex gap-4 pt-4">
+                    <button type="button" onclick="closeTaskModal()" class="flex-1 py-3 rounded-xl border border-gray-200 text-gray-700 font-medium hover:bg-gray-50 transition">取消</button>
+                    <button type="submit" class="flex-1 py-3 rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 transition">派发任务</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // 数据存储
+        const STORAGE_KEYS = {
+            issues: 'street_checkup_issues',
+            inspections: 'street_checkup_inspections',
+            tasks: 'street_checkup_tasks'
+        };
+
+        // 初始化数据
+        function initData() {
+            if (!localStorage.getItem(STORAGE_KEYS.issues)) {
+                localStorage.setItem(STORAGE_KEYS.issues, JSON.stringify([]));
+            }
+            if (!localStorage.getItem(STORAGE_KEYS.inspections)) {
+                localStorage.setItem(STORAGE_KEYS.inspections, JSON.stringify([]));
+            }
+            if (!localStorage.getItem(STORAGE_KEYS.tasks)) {
+                localStorage.setItem(STORAGE_KEYS.tasks, JSON.stringify([]));
+            }
+        }
+
+        // 获取数据
+        function getIssues() {
+            return JSON.parse(localStorage.getItem(STORAGE_KEYS.issues) || '[]');
+        }
+
+        function getInspections() {
+            return JSON.parse(localStorage.getItem(STORAGE_KEYS.inspections) || '[]');
+        }
+
+        function getTasks() {
+            return JSON.parse(localStorage.getItem(STORAGE_KEYS.tasks) || '[]');
+        }
+
+        // 保存数据
+        function saveIssues(issues) {
+            localStorage.setItem(STORAGE_KEYS.issues, JSON.stringify(issues));
+        }
+
+        function saveInspections(inspections) {
+            localStorage.setItem(STORAGE_KEYS.inspections, JSON.stringify(inspections));
+        }
+
+        function saveTasks(tasks) {
+            localStorage.setItem(STORAGE_KEYS.tasks, JSON.stringify(tasks));
+        }
+
+        // 标签页切换
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('tab-active'));
+            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('tab-active');
+            renderAll();
+        }
+
+        // 常量
+        const TYPE_LABELS = {
+            ROAD_DAMAGE: '道路破损', GARBAGE: '垃圾堆积', ILLEGAL_CONSTRUCTION: '违建',
+            SIGNAGE: '招牌问题', LIGHTING: '照明问题', DRAINAGE: '排水问题',
+            GREEN_SPACE: '绿化问题', OTHER: '其他'
+        };
+
+        const SEVERITY_LABELS = {
+            LOW: { label: '低', color: 'gray' },
+            MEDIUM: { label: '中', color: 'yellow' },
+            HIGH: { label: '高', color: 'orange' },
+            URGENT: { label: '紧急', color: 'red' }
+        };
+
+        const STATUS_LABELS = {
+            PENDING: { label: '待处理', color: 'gray' },
+            ASSIGNED: { label: '已派发', color: 'blue' },
+            IN_PROGRESS: { label: '处理中', color: 'yellow' },
+            COMPLETED: { label: '已完成', color: 'green' },
+            VERIFIED: { label: '已核实', color: 'indigo' }
+        };
+
+        const SCORE_CATEGORIES = [
+            { name: '环境卫生', items: ['道路清洁度', '垃圾清运', '公共设施卫生'] },
+            { name: '市容市貌', items: ['建筑外立面', '广告招牌', '绿化景观'] },
+            { name: '基础设施', items: ['道路平整度', '照明设施', '排水设施'] },
+            { name: '秩序管理', items: ['占道经营', '车辆停放', '违章搭建'] }
+        ];
+
+        // 渲染概览
+        function renderOverview() {
+            const issues = getIssues();
+            const tasks = getTasks();
+            const inspections = getInspections();
+
+            const pendingIssues = issues.filter(i => i.status === 'PENDING').length;
+            const completedTasks = tasks.filter(t => t.status === 'COMPLETED' || t.status === 'VERIFIED').length;
+
+            document.getElementById('stats-cards').innerHTML = `
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">问题总数</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-1">${issues.length}</p>
+                        </div>
+                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-sm text-orange-600 mt-4">${pendingIssues} 待处理</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">任务总数</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-1">${tasks.length}</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-sm text-green-600 mt-4">${completedTasks} 已完成</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">体检次数</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-1">${inspections.length}</p>
+                        </div>
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">完成率</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-1">${tasks.length > 0 ? Math.round((completedTasks / tasks.length) * 100) : 0}%</p>
+                        </div>
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('recent-issues').innerHTML = issues.slice(0, 3).map(issue => `
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                    <div>
+                        <p class="font-medium text-gray-900">${issue.title}</p>
+                        <p class="text-sm text-gray-500">${issue.location}</p>
+                    </div>
+                    <span class="px-2 py-1 bg-${SEVERITY_LABELS[issue.severity].color}-100 text-${SEVERITY_LABELS[issue.severity].color}-700 rounded-lg text-xs font-medium">${SEVERITY_LABELS[issue.severity].label}</span>
+                </div>
+            `).join('') || '<p class="text-gray-500 text-center py-4">暂无问题记录</p>';
+
+            document.getElementById('recent-tasks').innerHTML = tasks.slice(0, 3).map(task => `
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                    <div>
+                        <p class="font-medium text-gray-900">${task.title}</p>
+                        <p class="text-sm text-gray-500">截止：${task.deadline || '未设置'}</p>
+                    </div>
+                    <span class="px-2 py-1 bg-${STATUS_LABELS[task.status].color}-100 text-${STATUS_LABELS[task.status].color}-700 rounded-lg text-xs font-medium">${STATUS_LABELS[task.status].label}</span>
+                </div>
+            `).join('') || '<p class="text-gray-500 text-center py-4">暂无任务记录</p>';
+        }
+
+        // 渲染问题列表
+        function renderIssues() {
+            const issues = getIssues();
+            const tbody = document.getElementById('issues-table');
+            const empty = document.getElementById('issues-empty');
+
+            if (issues.length === 0) {
+                tbody.innerHTML = '';
+                empty.classList.remove('hidden');
+                return;
+            }
+
+            empty.classList.add('hidden');
+            tbody.innerHTML = issues.map(issue => `
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4 font-medium text-gray-900">${issue.title}</td>
+                    <td class="px-6 py-4 text-sm text-gray-600">${TYPE_LABELS[issue.type]}</td>
+                    <td class="px-6 py-4"><span class="px-2 py-1 bg-${SEVERITY_LABELS[issue.severity].color}-100 text-${SEVERITY_LABELS[issue.severity].color}-700 rounded-lg text-xs font-medium">${SEVERITY_LABELS[issue.severity].label}</span></td>
+                    <td class="px-6 py-4 text-sm text-gray-600">${issue.location}</td>
+                    <td class="px-6 py-4"><span class="px-2 py-1 bg-${STATUS_LABELS[issue.status].color}-100 text-${STATUS_LABELS[issue.status].color}-700 rounded-lg text-xs font-medium">${STATUS_LABELS[issue.status].label}</span></td>
+                    <td class="px-6 py-4 text-sm text-gray-500">${issue.date}</td>
+                    <td class="px-6 py-4">
+                        <button onclick="updateIssueStatus('${issue.id}')" class="text-indigo-600 hover:text-indigo-500 text-sm font-medium">更新状态</button>
+                        <button onclick="deleteIssue('${issue.id}')" class="text-red-600 hover:text-red-500 text-sm font-medium ml-2">删除</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // 渲染体检列表
+        function renderInspections() {
+            const inspections = getInspections();
+            const stats = document.getElementById('inspection-stats');
+            const list = document.getElementById('inspections-list');
+            const empty = document.getElementById('inspections-empty');
+
+            const avgScore = inspections.length > 0 
+                ? (inspections.reduce((sum, i) => sum + i.score, 0) / inspections.length).toFixed(1)
+                : 0;
+
+            stats.innerHTML = `
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <p class="text-sm text-gray-500">体检总数</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-1">${inspections.length}</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <p class="text-sm text-gray-500">平均分数</p>
+                    <p class="text-3xl font-bold text-indigo-600 mt-1">${avgScore}</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <p class="text-sm text-gray-500">本月体检</p>
+                    <p class="text-3xl font-bold text-green-600 mt-1">${inspections.filter(i => i.date.startsWith(new Date().toISOString().slice(0, 7))).length}</p>
+                </div>
+            `;
+
+            if (inspections.length === 0) {
+                list.innerHTML = '';
+                empty.classList.remove('hidden');
+                return;
+            }
+
+            empty.classList.add('hidden');
+            list.innerHTML = inspections.map(insp => {
+                let totalScore = 0, maxScore = 0;
+                insp.items.forEach(item => {
+                    totalScore += item.score;
+                    maxScore += item.maxScore;
+                });
+                const percentage = maxScore > 0 ? ((totalScore / maxScore) * 100).toFixed(1) : 0;
+
+                return `
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                        <div class="p-6 border-b border-gray-100 flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold text-lg text-gray-900">${insp.title}</h3>
+                                <p class="text-sm text-gray-500 mt-1">体检日期：${insp.date} · 总分：<span class="font-bold text-indigo-600">${percentage}%</span></p>
+                                ${insp.notes ? `<p class="text-sm text-gray-600 mt-2">${insp.notes}</p>` : ''}
+                            </div>
+                            <button onclick="deleteInspection('${insp.id}')" class="text-red-600 hover:text-red-500 text-sm font-medium">删除</button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="text-left px-6 py-3 text-sm font-medium text-gray-500 w-32">评估维度</th>
+                                        <th class="text-left px-6 py-3 text-sm font-medium text-gray-500">评估项目</th>
+                                        <th class="text-center px-6 py-3 text-sm font-medium text-gray-500 w-24">得分</th>
+                                        <th class="text-center px-6 py-3 text-sm font-medium text-gray-500 w-24">满分</th>
+                                        <th class="text-center px-6 py-3 text-sm font-medium text-gray-500 w-32">得分率</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    ${insp.items.map((item, idx) => {
+                                        const itemPct = item.maxScore > 0 ? Math.round((item.score / item.maxScore) * 100) : 0;
+                                        const color = itemPct >= 80 ? 'green' : itemPct >= 60 ? 'yellow' : 'red';
+                                        const isFirstInCategory = insp.items.filter(i => i.category === item.category)[0].item === item.item;
+                                        const categoryCount = insp.items.filter(i => i.category === item.category).length;
+                                        const categoryIndex = insp.items.filter(i => i.category === item.category).findIndex(i => i.item === item.item);
+                                        
+                                        return `
+                                            <tr class="hover:bg-gray-50">
+                                                ${categoryIndex === 0 ? `<td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-100 align-top" rowspan="${categoryCount}">${item.category}</td>` : ''}
+                                                <td class="px-6 py-4 text-sm text-gray-600">${item.item}</td>
+                                                <td class="px-6 py-4 text-center font-bold text-${color}-600">${item.score}</td>
+                                                <td class="px-6 py-4 text-center text-sm text-gray-500">${item.maxScore}</td>
+                                                <td class="px-6 py-4">
+                                                    <div class="flex items-center justify-center gap-2">
+                                                        <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                                            <div class="h-full bg-${color}-500 rounded-full progress-bar" style="width: ${itemPct}%"></div>
+                                                        </div>
+                                                        <span class="text-xs text-gray-500">${itemPct}%</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }).join('')}
+                                </tbody>
+                                <tfoot class="bg-gray-50 border-t-2 border-gray-200">
+                                    <tr>
+                                        <td colspan="2" class="px-6 py-4 font-bold text-gray-900 text-right">总分</td>
+                                        <td class="px-6 py-4 text-center font-bold text-2xl text-indigo-600">${totalScore}</td>
+                                        <td class="px-6 py-4 text-center font-bold text-gray-500">${maxScore}</td>
+                                        <td class="px-6 py-4 text-center font-bold text-indigo-600">${percentage}%</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 渲染任务列表
+        function renderTasks() {
+            const tasks = getTasks();
+            const issues = getIssues();
+            const stats = document.getElementById('task-stats');
+            const tbody = document.getElementById('tasks-table');
+            const empty = document.getElementById('tasks-empty');
+
+            const statusCounts = {};
+            Object.keys(STATUS_LABELS).forEach(s => statusCounts[s] = tasks.filter(t => t.status === s).length);
+
+            stats.innerHTML = Object.entries(STATUS_LABELS).map(([status, { label, color }]) => `
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 text-center">
+                    <p class="text-sm text-gray-500">${label}</p>
+                    <p class="text-2xl font-bold text-${color}-600 mt-1">${statusCounts[status]}</p>
+                </div>
+            `).join('');
+
+            if (tasks.length === 0) {
+                tbody.innerHTML = '';
+                empty.classList.remove('hidden');
+                return;
+            }
+
+            empty.classList.add('hidden');
+            tbody.innerHTML = tasks.map(task => {
+                const relatedIssue = issues.find(i => i.id === task.issueId);
+                const priorityLabels = ['', '低', '中', '高', '紧急'];
+                return `
+                    <tr class="hover:bg-gray-50 transition">
+                        <td class="px-6 py-4">
+                            <div>
+                                <span class="font-medium text-gray-900">${task.title}</span>
+                                ${task.description ? `<p class="text-sm text-gray-500 mt-1">${task.description}</p>` : ''}
+                            </div>
+                        </td>
+                        <td class="px-6 py-4"><span class="px-2 py-1 bg-${STATUS_LABELS[task.status].color}-100 text-${STATUS_LABELS[task.status].color}-700 rounded-lg text-xs font-medium">${STATUS_LABELS[task.status].label}</span></td>
+                        <td class="px-6 py-4 text-sm text-gray-600">${priorityLabels[task.priority]}</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">${task.assignee}</td>
+                        <td class="px-6 py-4 text-sm text-gray-500">${task.deadline || '-'}</td>
+                        <td class="px-6 py-4">${relatedIssue ? `<span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-600">${relatedIssue.title}</span>` : '-'}</td>
+                        <td class="px-6 py-4">
+                            <button onclick="updateTaskStatus('${task.id}')" class="text-indigo-600 hover:text-indigo-500 text-sm font-medium">更新状态</button>
+                            <button onclick="deleteTask('${task.id}')" class="text-red-600 hover:text-red-500 text-sm font-medium ml-2">删除</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // 渲染所有
+        function renderAll() {
+            renderOverview();
+            renderIssues();
+            renderInspections();
+            renderTasks();
+            updateIssueSelect();
+        }
+
+        // 更新问题选择框
+        function updateIssueSelect() {
+            const issues = getIssues();
+            const select = document.querySelector('#task-form select[name="issueId"]');
+            select.innerHTML = '<option value="">不关联</option>' + 
+                issues.filter(i => i.status === 'PENDING').map(i => 
+                    `<option value="${i.id}">${i.title}</option>`
+                ).join('');
+        }
+
+        // 问题弹窗
+        function openIssueModal() {
+            document.getElementById('issue-modal').classList.add('active');
+        }
+
+        function closeIssueModal() {
+            document.getElementById('issue-modal').classList.remove('active');
+            document.getElementById('issue-form').reset();
+        }
+
+        // 体检弹窗
+        function openInspectionModal() {
+            const container = document.getElementById('score-inputs');
+            container.innerHTML = SCORE_CATEGORIES.map(cat => `
+                <div class="bg-gray-50 rounded-xl p-4">
+                    <h4 class="font-medium text-gray-900 mb-4">${cat.name}</h4>
+                    <div class="space-y-3">
+                        ${cat.items.map(item => `
+                            <div class="flex items-center gap-4">
+                                <span class="w-32 text-sm text-gray-600">${item}</span>
+                                <input type="range" name="score_${cat.name}_${item}" min="0" max="10" value="8" 
+                                    class="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                                    oninput="this.nextElementSibling.textContent = this.value + ' / 10'">
+                                <span class="w-16 text-center text-sm font-medium">8 / 10</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('inspection-modal').classList.add('active');
+        }
+
+        function closeInspectionModal() {
+            document.getElementById('inspection-modal').classList.remove('active');
+            document.getElementById('inspection-form').reset();
+        }
+
+        // 任务弹窗
+        function openTaskModal() {
+            updateIssueSelect();
+            document.getElementById('task-modal').classList.add('active');
+        }
+
+        function closeTaskModal() {
+            document.getElementById('task-modal').classList.remove('active');
+            document.getElementById('task-form').reset();
+        }
+
+        // 表单提交
+        document.getElementById('issue-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = new FormData(this);
+            const issues = getIssues();
+            const newIssue = {
+                id: 'issue_' + Date.now(),
+                title: form.get('title'),
+                type: form.get('type'),
+                severity: form.get('severity'),
+                location: form.get('location'),
+                description: form.get('description'),
+                status: 'PENDING',
+                date: new Date().toISOString().split('T')[0]
+            };
+            issues.unshift(newIssue);
+            saveIssues(issues);
+            closeIssueModal();
+            renderAll();
+        });
+
+        document.getElementById('inspection-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = new FormData(this);
+            const items = [];
+            let totalScore = 0, maxTotal = 0;
+
+            SCORE_CATEGORIES.forEach(cat => {
+                cat.items.forEach(item => {
+                    const score = parseInt(form.get(`score_${cat.name}_${item}`)) || 0;
+                    items.push({ category: cat.name, item, score, maxScore: 10 });
+                    totalScore += score;
+                    maxTotal += 10;
+                });
+            });
+
+            const inspections = getInspections();
+            inspections.unshift({
+                id: 'insp_' + Date.now(),
+                title: form.get('title'),
+                notes: form.get('notes'),
+                items,
+                score: maxTotal > 0 ? (totalScore / maxTotal) * 100 : 0,
+                date: new Date().toISOString().split('T')[0]
+            });
+            saveInspections(inspections);
+            closeInspectionModal();
+            renderAll();
+        });
+
+        document.getElementById('task-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = new FormData(this);
+            const tasks = getTasks();
+            const newTask = {
+                id: 'task_' + Date.now(),
+                title: form.get('title'),
+                description: form.get('description'),
+                assignee: form.get('assignee'),
+                priority: parseInt(form.get('priority')),
+                deadline: form.get('deadline'),
+                issueId: form.get('issueId') || null,
+                status: 'PENDING',
+                date: new Date().toISOString().split('T')[0]
+            };
+            tasks.unshift(newTask);
+            saveTasks(tasks);
+
+            if (newTask.issueId) {
+                const issues = getIssues();
+                const issue = issues.find(i => i.id === newTask.issueId);
+                if (issue) {
+                    issue.status = 'ASSIGNED';
+                    saveIssues(issues);
+                }
+            }
+
+            closeTaskModal();
+            renderAll();
+        });
+
+        // 删除操作
+        function deleteIssue(id) {
+            if (confirm('确定删除此问题？')) {
+                saveIssues(getIssues().filter(i => i.id !== id));
+                renderAll();
+            }
+        }
+
+        function deleteInspection(id) {
+            if (confirm('确定删除此体检记录？')) {
+                saveInspections(getInspections().filter(i => i.id !== id));
+                renderAll();
+            }
+        }
+
+        function deleteTask(id) {
+            if (confirm('确定删除此任务？')) {
+                saveTasks(getTasks().filter(t => t.id !== id));
+                renderAll();
+            }
+        }
+
+        // 更新状态
+        function updateIssueStatus(id) {
+            const issues = getIssues();
+            const issue = issues.find(i => i.id === id);
+            if (issue) {
+                const statuses = Object.keys(STATUS_LABELS);
+                const currentIndex = statuses.indexOf(issue.status);
+                issue.status = statuses[(currentIndex + 1) % statuses.length];
+                saveIssues(issues);
+                renderAll();
+            }
+        }
+
+        function updateTaskStatus(id) {
+            const tasks = getTasks();
+            const task = tasks.find(t => t.id === id);
+            if (task) {
+                const statuses = Object.keys(STATUS_LABELS);
+                const currentIndex = statuses.indexOf(task.status);
+                task.status = statuses[(currentIndex + 1) % statuses.length];
+                saveTasks(tasks);
+                renderAll();
+            }
+        }
+
+        // 点击弹窗外部关闭
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
                 }
             });
         });
+
+        // 初始化
+        initData();
+        showTab('overview');
     </script>
 </body>
 </html>
